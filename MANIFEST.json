@@ -1,10 +1,11 @@
 {
   "name": "math-courseware-kit",
-  "version": "0.2",
+  "version": "0.2.1",
   "created_on": "2026-11-01",
   "description": "数学动画互动课件的Agent实施说明、可移植Skill、源码模板、完整案例与验收记录",
   "hash_algorithm": "SHA-256",
   "manifest_self_hash_excluded": true,
+  "license": "MIT",
   "files": [
     {
       "path": ".gitignore",
@@ -28,13 +29,13 @@
     },
     {
       "path": "README.md",
-      "bytes": 6730,
-      "sha256": "4caa21791632da51b612a04510d61c4f7c66ebcdf4549b48de5ac9c8c6539d75"
+      "bytes": 6732,
+      "sha256": "3233ba9fd726d9d8f8f1db104db48ba0277b63028bfc94ae06e43a6594c2ac0e"
     },
     {
       "path": "VALIDATION.md",
-      "bytes": 5237,
-      "sha256": "d69c8ed77a0a31b51e644101dbc5d1bbbd259fcfbe2bb688bf8cb8e9baac0422"
+      "bytes": 5900,
+      "sha256": "5557e2d84e82ce568253bd5d357d180bd722ad598d8297484831c8916442745a"
     },
     {
       "path": "examples/bouncing-segment/index.html",
@@ -98,8 +99,8 @@
     },
     {
       "path": "skills/create-math-lesson/SKILL.md",
-      "bytes": 6830,
-      "sha256": "1d3d487ff63da99d23ae742fa068ca4b7a5868f0647bcb9eb88ef1fdef8729b2"
+      "bytes": 8064,
+      "sha256": "61c8ca807e6d747ea8fdd70aca63e2ac88aedc8b6a3e5067f7d8faeffb944394"
     },
     {
       "path": "skills/create-math-lesson/agents/openai.yaml",
@@ -112,42 +113,42 @@
       "sha256": "8558839327f9b25485ad49b273dc35da32849b642d8a0ea06e7be012a5a22cc8"
     },
     {
-      "path": "skills/create-math-lesson/assets/starter/build.py",
+      "path": "skills/create-math-lesson/assets/build.py",
       "bytes": 1981,
       "sha256": "966a28cf5c192fbef8ea29286e287f1d58b5f684b49cc4f7ffb6996a37ba0788"
     },
     {
-      "path": "skills/create-math-lesson/assets/starter/controller.js",
+      "path": "skills/create-math-lesson/assets/controller.js",
       "bytes": 3758,
       "sha256": "26c948c4601a55950bc5c0706b59ad7216f1099eb7900fa9be2ea0708fb80680"
     },
     {
-      "path": "skills/create-math-lesson/assets/starter/download.js",
+      "path": "skills/create-math-lesson/assets/download.js",
       "bytes": 2102,
       "sha256": "cea40d5244b6ad0885fe258cc40806d68927324c5be561db4134a3f67c9523e8"
     },
     {
-      "path": "skills/create-math-lesson/assets/starter/engine.js",
+      "path": "skills/create-math-lesson/assets/engine.js",
       "bytes": 10323,
       "sha256": "6f21815ecc15ca6aa5ac8d725b35c37589a2f81621ba50b617e55f8300f02371"
     },
     {
-      "path": "skills/create-math-lesson/assets/starter/index.html",
+      "path": "skills/create-math-lesson/assets/index.html",
       "bytes": 36002,
       "sha256": "ab016b7f5e1b23dfa9511f0f08c4e45d8aa0b0669560efb9328cd7df58301918"
     },
     {
-      "path": "skills/create-math-lesson/assets/starter/lesson.js",
+      "path": "skills/create-math-lesson/assets/lesson.js",
       "bytes": 9563,
       "sha256": "4cacf9e54a9449ef750ec057850eb2fbad210767343a4bdbbecd317215d3af9d"
     },
     {
-      "path": "skills/create-math-lesson/assets/starter/shell.html",
+      "path": "skills/create-math-lesson/assets/shell.html",
       "bytes": 1538,
       "sha256": "cb309025e3634939530b293a5bf49f5c3b3578397c0be9a761271a29176dd136"
     },
     {
-      "path": "skills/create-math-lesson/assets/starter/style.css",
+      "path": "skills/create-math-lesson/assets/style.css",
       "bytes": 8569,
       "sha256": "36ab28b764daaa37eafca025d7921ff70353fc3fbfb046ecbd59bffa7f9307f0"
     },
@@ -188,14 +189,13 @@
     },
     {
       "path": "skills/create-math-lesson/scripts/check_engine.cjs",
-      "bytes": 6867,
-      "sha256": "c6f87ff64a5feda56f454d92dfbbdafdf24b73429d21cbe6217f7cbc7ba977cd"
+      "bytes": 6859,
+      "sha256": "578941ce99ccaaeee13805f0f2c63c03170aff8cbbb07559249132be58c0d8d5"
     },
     {
       "path": "skills/create-math-lesson/scripts/new_lesson.py",
-      "bytes": 1233,
-      "sha256": "b3b33e868ead0a3b1c1b08dd923cd2a0dc96e8844ee119f421fc70476e6c6c3a"
+      "bytes": 1205,
+      "sha256": "45192dafc082b46fd77cc360409e4294b4adf84bf55b0908e4e87b0d692dd878"
     }
-  ],
-  "license": "MIT"
+  ]
 }

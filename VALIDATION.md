@@ -63,7 +63,7 @@
 
 ```bash
 node skills/create-math-lesson/scripts/check_engine.cjs
-python3 skills/create-math-lesson/scripts/check_delivery.py skills/create-math-lesson/assets/starter/index.html
+python3 skills/create-math-lesson/scripts/check_delivery.py skills/create-math-lesson/assets/index.html
 python3 skills/create-math-lesson/scripts/check_delivery.py examples/bouncing-segment/index.html
 node examples/bouncing-segment/src/check_math.js
 ```
@@ -72,6 +72,12 @@ node examples/bouncing-segment/src/check_math.js
 
 ## 6. v0.2 发布前复验（2026-11-01）
 
-本次重新运行并通过：模板控制器检查、折返案例的 58 项状态检查、starter 与折返案例的 HTML 静态检查。在仓库外的临时含空格路径创建并构建 starter，产物与包内 starter/index.html 逐字节一致；README 相对链接与 MANIFEST.json 所列文件的字节数、SHA-256 均已核对。
+本次重新运行并通过：模板控制器检查、折返案例的 58 项状态检查、starter 与折返案例的 HTML 静态检查。在仓库外的临时含空格路径创建并构建 starter，产物与包内 assets/index.html 逐字节一致；README 相对链接与 MANIFEST.json 所列文件的字节数、SHA-256 均已核对。
+
+## 7. v0.2.1 变更记录（2026-11-01）
+
+- skills/create-math-lesson/assets/ 下的 starter 文件由 assets/starter/ 子目录提升至 assets/ 根（满足 WorkBuddy 开放平台「目录最多两层」的打包要求），new_lesson.py 与 check_engine.cjs 中的路径引用同步更新。
+- SKILL.md frontmatter 按开放平台规范补齐 display_name、display_name_en、description_zh、description_en、examples_zh、examples_en、version、author 字段，长文本值统一加引号（修复平台解析失败：未加引号值中的 ASCII 冒号会被 YAML 误认为新键）。
+- 重跑模板生成、控制器检查与 HTML 静态检查，全部通过。
 
 本次发布未重新运行真实浏览器交互、下载文件重开、小屏布局与学生试用；前文列出的未验证项仍然保留。

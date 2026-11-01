@@ -1,6 +1,20 @@
 ---
 name: create-math-lesson
-description: 把数学题制作成面向六年级及相近水平的动画互动课件。用于题目图片或文字的可视化解析、同类课件制作或更新、选择题引导教学、图示数学思维总结和变式训练。围绕核心原理组织图示，选对约600毫秒自动继续，输出可离线打开且带下载按钮的单文件HTML；按请求和宿主能力提供在线演示。
+display_name: 数学动画互动课件
+display_name_en: Interactive Math Lesson Builder
+description: "把数学题制作成面向六年级及相近水平的动画互动课件。用于题目图片或文字的可视化解析、同类课件制作或更新、选择题引导教学、图示数学思维总结和变式训练。围绕核心原理组织图示，选对约600毫秒自动继续，输出可离线打开且带下载按钮的单文件HTML；按请求和宿主能力提供在线演示。"
+description_zh: "把数学题制作成动画互动课件：先独立解题核验，再设计图示分镜与选择题引导，输出可离线打开、带下载按钮的单文件 HTML，含数学思维关系图和两道变式训练。"
+description_en: "Turn math problems into animated interactive lessons: independent solving and verification first, then storyboarded visual explanations with guided multiple-choice steps, delivered as a single offline HTML file with a math-relations map and two practice problems."
+examples_zh:
+- "把这道行程相遇题做成六年级动画课件，输出可下载的 HTML"
+- "根据这张题目图片制作互动讲解，学生答错要停留并给针对性提示"
+- "帮我基于已有的动点折返课件做一道分数比较的新题"
+examples_en:
+- "Turn this motion word problem into an interactive animated lesson for 6th graders, delivered as a downloadable HTML file"
+- "Build an interactive lesson from this problem photo, with retry feedback when the student answers wrong"
+- "Create a new fraction-comparison lesson based on my existing bouncing-segment lesson"
+version: 0.2.0
+author: "leontb"
 ---
 
 # 数学动画互动课件

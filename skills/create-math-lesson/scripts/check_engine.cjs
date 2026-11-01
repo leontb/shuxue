@@ -5,7 +5,7 @@ const assert = require('node:assert/strict');
 const fs = require('node:fs');
 const path = require('node:path');
 const vm = require('node:vm');
-const starter = path.resolve(__dirname, '../assets/starter');
+const starter = path.resolve(__dirname, '../assets');
 const Controller = require(path.join(starter, 'controller.js'));
 
 class Clock {
