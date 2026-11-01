@@ -1,0 +1,303 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="用数轴动画讲清延迟出发、线段折返、相遇前后相距1；选择题答对自动继续，附一图总结与两道变式。"><title>动点与折返线段｜数轴动画互动课</title><style>:root{color-scheme:light;--ink:#182d40;--muted:#5c7083;--line:#dce5ed;--paper:#fff;--bg:#f2f5f8;--navy:#234c73;--blue:#315f9c;--teal:#137c72;--teal-light:#e5f4ef;--orange:#bc5b20;--orange-light:#fff0e4;--wrong:#9a431c;--good:#1a6852}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.65 -apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif}button{font:inherit;cursor:pointer;touch-action:manipulation}button:disabled{cursor:default;opacity:.4}button:focus-visible,summary:focus-visible{outline:3px solid #87afd3;outline-offset:4px}[hidden]{display:none!important}h1,h2,h3,p{margin-top:0}button,summary{-webkit-tap-highlight-color:transparent}.app{max-width:1080px;margin:0 auto;padding:26px 24px 42px}.mast{display:flex;align-items:flex-start;justify-content:space-between;gap:20px;margin-bottom:21px}.brand{font-size:12px;letter-spacing:.1em;font-weight:650;color:var(--navy)}h1{font-size:30px;line-height:1.35;margin:6px 0 8px;letter-spacing:-.02em}.intro{font-size:14px;color:var(--muted);margin:0}.mast-right{display:grid;justify-items:end;gap:9px;flex:none}.badge{font-size:12px;color:var(--muted)}.download-btn,.btn{border:1px solid #bdcfdc;background:#fff;border-radius:9px;color:var(--navy);padding:8px 13px;min-height:42px;font-size:14px;font-weight:600}.download-btn{display:flex;align-items:center;gap:8px;white-space:nowrap}.download-btn:hover,.btn:hover{background:#edf3f8}.download-status{font-size:13px;color:var(--good)}.download-status:empty{display:none}.problem{background:#fff;border:1px solid var(--line);border-radius:12px;padding:12px 18px;font-size:14px;margin-bottom:21px}.problem summary{font-weight:650;cursor:pointer}.problem p{margin:9px 0}.problem ol{padding-left:22px;margin:9px 0 2px}.problem li{margin:5px 0}.givens{display:flex;flex-wrap:wrap;gap:7px}.givens span{background:#f0f5f9;padding:4px 9px;border-radius:6px;font-size:13px}.nav{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:10px;margin:0 0 18px}.nav button{min-height:49px;border:0;border-top:3px solid #d9e2ea;padding:8px 1px 0;background:transparent;color:var(--muted);text-align:left;font-size:13px}.nav button.current{border-color:var(--ink);color:var(--ink);font-weight:650}.nav button.done{border-color:var(--teal)}.nav .n{font-size:12px;display:inline-block;min-width:21px}.lesson{background:#fff;border:1px solid var(--line);border-radius:18px;overflow:hidden;scroll-margin-top:14px}.lesson-header{padding:24px 28px 15px}.eyebrow{font-size:12px;color:var(--muted)}.lesson h2{font-size:25px;line-height:1.4;margin:6px 0 9px}.lead{font-size:16px;margin:0;max-width:900px}.lesson-body{padding:0 28px 24px}.visual{padding:18px 19px;background:#f5f8fa;border:1px solid #e0e8ef;border-radius:13px}.visual-head{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap}.visual-title{font-size:14px;font-weight:650}.clock{font-size:15px;font-weight:650;color:var(--ink);font-variant-numeric:tabular-nums}.clock small{font-size:12px;color:var(--muted);font-weight:400;margin-left:12px}.motion-svg{display:block;width:100%;height:auto;overflow:visible}.motion-svg text{font-family:inherit}.motion-svg .axis-label{font-size:18px;fill:var(--muted)}.motion-svg .point-letter{font-size:23px;font-weight:700}.motion-svg .coord{font-size:16px}.motion-svg .scene-note{font-size:17px;fill:var(--muted)}.legend{display:flex;gap:16px;flex-wrap:wrap;font-size:12px;color:var(--muted)}.legend span{display:flex;gap:6px;align-items:center}.key-dot{display:inline-block;width:10px;height:10px;border-radius:50%;background:var(--orange)}.key-dot.teal{background:var(--teal)}.key-dot.outline{background:#fff;border:2px solid var(--teal)}.readouts{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:9px;margin:6px 0 14px}.readout{background:#fff;border:1px solid #e0e7ee;border-radius:9px;padding:7px 12px;display:flex;justify-content:space-between;align-items:baseline;gap:7px}.readout span{font-size:12px;color:var(--muted)}.readout strong{font-size:23px;line-height:1.3;font-variant-numeric:tabular-nums}.readout.p strong{color:var(--orange)}.readout.q strong{color:var(--teal)}.motion-controls{display:flex;align-items:center;gap:8px;flex-wrap:wrap}.motion-controls .btn{font-size:13px;min-height:38px;padding:6px 11px}.time-keys{display:flex;gap:6px;flex-wrap:wrap;margin-top:11px}.time-keys button{border:1px solid #c9d7e0;background:#fff;border-radius:7px;padding:5px 9px;min-height:33px;color:#425c70;font-size:12px}.time-keys button.active{border-color:var(--teal);background:var(--teal-light);color:var(--teal)}.motion-caption{font-size:13px;color:var(--muted);min-height:22px;margin:10px 0 0}.insight{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin:15px 0 0}.insight>div{border-left:3px solid #aac4d7;padding:1px 12px}.insight small{display:block;font-size:12px;color:var(--muted)}.insight strong{font-size:18px;display:block;font-weight:650;line-height:1.5}.insight .orange{border-color:var(--orange)}.insight .teal{border-color:var(--teal)}.equation-line{margin:15px 0 0;padding:12px 14px;background:#edf4f9;border-radius:9px;font-size:16px;color:var(--navy);text-align:center}.equation-line strong{font-size:19px}.question{margin-top:23px}.q-label{font-size:12px;color:var(--muted);margin:0 0 5px}.question h3{font-size:18px;line-height:1.55;margin-bottom:12px}.choices{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}.choice{display:flex;gap:10px;align-items:center;width:100%;min-height:56px;border:1.5px solid #c4d1dc;background:#fff;border-radius:10px;padding:11px 13px;color:var(--ink);text-align:left;font-size:15px}.choice:hover{background:#f7fafc;border-color:#789db9}.letter{width:25px;height:25px;flex:none;border-radius:6px;display:flex;align-items:center;justify-content:center;background:#edf2f6;color:#547087;font-size:12px;font-weight:650}.choice .mark{margin-left:auto;font-size:17px}.choice.correct{border-color:#26836d;background:#edf8f2}.choice.correct .letter{background:#d7eee3;color:var(--good)}.choice.wrong{border-color:#bc7c58;background:#fff4ed}.feedback{margin:12px 0 0;padding:10px 13px;border-radius:8px;background:#edf7f1;color:var(--good);font-size:14px}.feedback.error{background:#fff2e7;color:var(--wrong)}.solution{margin-top:15px;font-size:14px;color:#415d73}.solution summary{cursor:pointer;font-weight:600}.solution p{margin:9px 0 0}.solution .math{font-weight:600;color:var(--ink)}.lesson-footer{padding:13px 28px;border-top:1px solid var(--line);display:flex;gap:12px;align-items:center;justify-content:space-between;flex-wrap:wrap}.footer-buttons{display:flex;gap:8px;flex-wrap:wrap}.lesson-footer .btn{font-size:13px;min-height:38px}.advance-status{font-size:12px;color:var(--muted)}.footnote{font-size:12px;color:var(--muted);margin:12px 2px 0}.zero-row{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}.zero-box{background:#fff;border:1px solid #d8e4ec;border-radius:10px;padding:18px 10px;text-align:center}.zero-box .expression{font-size:23px;font-weight:650;color:var(--blue)}.zero-box small{display:block;font-size:13px;color:var(--muted);margin-top:8px}.zero-bridge{text-align:center;padding:16px 10px;font-size:16px}.zero-bridge strong{display:block;color:var(--navy);font-size:21px;margin-top:2px}.zero-results{display:flex;gap:9px;justify-content:center;flex-wrap:wrap}.zero-results span{background:#eaf2f8;color:var(--navy);padding:7px 14px;border-radius:8px;font-size:16px}.length-plan{margin:3px 0 13px}.length-plan svg{width:100%;display:block}.length-plan text{font-family:inherit;font-size:18px}.timeline{display:grid;grid-template-columns:5fr 6fr 6fr 5fr;gap:4px;margin:18px 0 14px}.timeline>div{min-width:0;padding:9px 3px;text-align:center;border-radius:6px;background:#e4eaf1;font-size:13px;position:relative}.timeline .right{background:#e1f2ec;color:#216e61}.timeline .left{background:#e5edf9;color:#3a5e8e}.timeline strong{display:block;font-size:15px}.timeline span{font-size:11px;color:var(--muted)}.time-boundaries{display:flex;justify-content:space-between;font-size:12px;color:var(--muted);margin-top:5px}.meeting-cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:9px;margin:16px 0 12px}.meeting-card{background:#fff;border:1px solid #c8d7e2;border-radius:10px;padding:10px 8px;color:var(--ink);min-width:0}.meeting-card.active{border-color:var(--teal);box-shadow:inset 0 0 0 1px var(--teal);background:#edf8f3}.meeting-card strong{font-size:20px;display:block}.meeting-card small{font-size:12px;color:var(--muted);display:block}.mini-dots{display:flex;align-items:center;justify-content:center;gap:6px;font-size:12px;margin-top:7px;white-space:nowrap}.mini-p,.mini-q{border-radius:50%;width:25px;height:25px;display:inline-flex;justify-content:center;align-items:center;color:#fff;font-weight:600}.mini-p{background:var(--orange)}.mini-q{background:var(--teal)}.mini-gap{width:25px;border-top:1px solid #8ca3b3;position:relative}.mini-gap::after{content:'1';position:absolute;top:-19px;left:8px;color:var(--muted);font-size:11px}.mini-meet{color:var(--navy);font-size:13px}.intervals{margin:17px 0 0;border:1px solid #dce6ed;border-radius:10px;overflow:hidden}.interval-row{display:grid;grid-template-columns:115px 1fr 100px;gap:10px;align-items:center;padding:8px 13px;border-bottom:1px solid #e2eaf0;font-size:14px;background:#fff}.interval-row:last-child{border-bottom:0}.interval-row.hit{background:#eaf6ef}.interval-row .label{font-size:12px;color:var(--muted)}.interval-row b{font-size:15px}.interval-row .result{color:var(--muted);font-size:12px;text-align:right}.interval-row.hit .result{color:var(--good);font-weight:650}.after-proof{display:flex;gap:10px;align-items:center;justify-content:center;flex-wrap:wrap;padding:11px 14px;margin-top:13px;border-radius:9px;background:#fff4e9;font-size:14px}.after-proof strong{color:var(--orange)}.finish-links{text-align:center;margin-top:22px}.finish-links button{border:0;background:transparent;color:var(--navy);font-size:14px;padding:8px 12px}.doc-bottom{margin-top:30px;font-size:12px;color:var(--muted);text-align:center}
+@media(max-width:760px){.app{padding:17px 14px 30px}h1{font-size:25px}.mast{gap:12px}.mast-right .badge{font-size:11px}.download-btn{font-size:12px;padding:7px 10px}.nav{grid-template-columns:repeat(3,minmax(0,1fr));gap:7px 12px}.nav button{min-height:40px;padding-top:5px}.lesson-header{padding:20px 18px 12px}.lesson h2{font-size:22px}.lesson-body{padding:0 18px 20px}.visual{padding:14px 12px}.lead{font-size:15px}.readouts{gap:7px}.readout{display:block;padding:6px 9px}.readout span{display:block;font-size:11px}.readout strong{font-size:21px}.insight strong{font-size:16px}.insight>div{padding-left:9px}.lesson-footer{padding:12px 18px}.choice{font-size:14px;padding:10px;gap:8px}.zero-box .expression{font-size:21px}.zero-row{gap:7px}.zero-box{padding:15px 7px}.clock small{display:block;margin-left:0;font-size:11px}.timeline strong{font-size:13px}.interval-row{grid-template-columns:88px 1fr 72px;gap:7px;font-size:12px}.interval-row b{font-size:14px}.meeting-card strong{font-size:18px}.meeting-card small{font-size:11px}.motion-svg .coord{display:none}.motion-svg .point-letter{font-size:31px}.motion-svg .axis-label{font-size:24px}.motion-svg .scene-note{font-size:23px}}
+@media(max-width:420px){.app{padding:13px 10px 26px}.mast h1{font-size:22px}.mast .intro{font-size:12px}.mast-right .badge{display:none}.mast-right{padding-top:18px}.download-btn svg{display:none}.download-btn{padding:7px 8px}.lesson-header{padding:18px 14px 11px}.lesson-body{padding:0 13px 18px}.visual{padding:12px 9px}.choices{grid-template-columns:1fr}.lesson h2{font-size:21px}.insight{gap:7px}.insight small{font-size:11px}.insight strong{font-size:14px}.readouts{grid-template-columns:repeat(2,minmax(0,1fr))}.readout{display:flex;align-items:center;padding:7px 10px}.readout strong{font-size:23px}.readout span{font-size:12px}.zero-box .expression{font-size:18px}.zero-results span{font-size:14px;padding:6px 9px}.motion-svg .axis-label{font-size:29px}.motion-svg .point-letter{font-size:35px}.motion-svg .scene-note{font-size:28px}.length-plan text{font-size:24px}.equation-line{font-size:14px;padding:10px}.equation-line strong{font-size:16px}.interval-row{padding:8px 8px;grid-template-columns:71px 1fr 62px;gap:6px}.interval-row b{font-size:13px}.interval-row .label,.interval-row .result{font-size:11px}.timeline{gap:3px}.timeline span{font-size:10px}.meeting-cards{gap:5px}.meeting-card{padding:9px 3px}.meeting-card strong{font-size:17px}.mini-dots{gap:3px}.mini-gap{width:20px}.mini-p,.mini-q{width:23px;height:23px}.after-proof{font-size:12px}.lesson-footer{padding:12px 14px}.nav button{font-size:12px}}
+.length-plan{padding:1px 24px 5px;margin-bottom:13px}.length-labels{position:relative;height:31px;font-size:15px;color:var(--teal)}.length-labels span{position:absolute;left:0;transform:translateX(-50%)}.length-labels span:nth-child(2){left:25%}.length-labels span:nth-child(3){left:100%;color:var(--ink)}.length-rail{display:flex;align-items:center;height:10px}.length-rail i{width:25%;height:8px;background:var(--teal)}.length-rail b{width:75%;border-top:3px dashed var(--blue)}.length-words{display:grid;grid-template-columns:1fr 3fr;text-align:center;font-size:14px;margin-top:5px;color:var(--blue)}.length-words span:first-child{color:var(--teal)}.length-brace{margin-top:7px;padding-top:3px;border-top:1px solid #b6c6d3;text-align:center;font-size:13px;color:var(--muted)}
+@media(max-width:519px){.motion-svg .point-letter{font-size:24px}.motion-svg .axis-label{font-size:22px}.motion-svg .secondary-tick{display:none}.motion-svg .scene-note{font-size:18px}.length-plan{padding-left:19px;padding-right:19px}.length-labels{font-size:14px;height:28px}.length-words{font-size:13px}.length-brace{font-size:12px}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;animation:none!important;transition:none!important}}
+
+.bx-section{margin-top:34px;color:#183143;scroll-margin-top:20px}.bx-section-head{margin-bottom:16px}.bx-kicker{font-size:12px;font-weight:650;letter-spacing:.055em;color:#60778a}.bx-section h2{font-size:24px;line-height:1.4;margin:5px 0 6px}.bx-section-head p{font-size:14px;color:#60778a;margin:0}.bx-map{display:grid;grid-template-columns:1fr 1fr;border:1px solid #d9e3e9;border-radius:16px;overflow:hidden;background:#fff}.bx-map-cell{min-width:0;padding:20px 22px;border-bottom:1px solid #e0e8ed}.bx-map-cell:nth-child(odd){border-right:1px solid #e0e8ed}.bx-map-cell:nth-last-child(-n+2){border-bottom:0}.bx-map-cell h3{display:flex;align-items:baseline;gap:9px;font-size:16px;line-height:1.5;margin:0 0 17px}.bx-map-cell h3>span{color:#7890a1;font-size:12px;font-variant-numeric:tabular-nums}.bx-map-caption{font-size:12px;line-height:1.65;color:#657b8c;margin:11px 0 0}.bx-zero{display:grid;grid-template-columns:1fr 14px 1fr 14px 1fr 28px;align-items:center;gap:3px;font-size:15px;text-align:center}.bx-zero>span{background:#edf3f7;border-radius:6px;padding:9px 2px;font-weight:650;white-space:nowrap}.bx-zero>b{font-weight:500}.bx-zero-result{font-size:13px;color:#187565}.bx-zero-result>span{background:none;padding:4px 2px 8px}.bx-coordinate-strip{display:flex;justify-content:space-between;gap:7px;padding-top:8px;border-top:1px solid #e5edf2;font-size:13px}.bx-coordinate-strip>span{display:flex;align-items:center;gap:6px}.bx-coordinate-strip strong{font-size:21px;font-variant-numeric:tabular-nums}.bx-small-equation{font-size:14px;line-height:1.6;margin:4px 0;color:#425e72}.bx-small-equation strong{color:#147e75}.bx-time-map{margin:15px 0 5px}.bx-time-stops{display:flex;justify-content:space-between;position:relative}.bx-time-stops:before{content:"";position:absolute;top:18px;height:2px;background:#c4d5dd;left:20px;right:20px}.bx-time-stops>span{display:flex;flex-direction:column;align-items:center;gap:3px;z-index:1}.bx-time-stops b{font-size:16px;line-height:36px;width:38px;height:36px;border:1px solid #c4d5dd;border-radius:7px;background:#f0f6f7;text-align:center}.bx-time-stops small{font-size:11px;color:#6a7f8d}.bx-time-legs{display:grid;grid-template-columns:repeat(3,1fr);gap:7px;font-size:12px;color:#18786e;text-align:center;margin:4px 14px 0}.bx-gap-figure{display:block;width:100%;max-width:440px;margin:auto;overflow:visible}.bx-svg-meta{font:12px -apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif;fill:#637b8b}.bx-svg-text{font:14px -apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif;fill:#28485f}.bx-svg-strong{font:600 15px -apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif;fill:#163d4d}.bx-meeting-times{display:grid;grid-template-columns:1fr .85fr 1fr;margin-top:14px;gap:4px}.bx-meeting-times>div{padding:10px 5px;background:#eaf5f0;border-radius:7px;text-align:center}.bx-meeting-times>div.bx-meeting-middle{background:#f0f4f7}.bx-meeting-times small,.bx-meeting-times strong,.bx-meeting-times span{display:block}.bx-meeting-times small{font-size:11px;color:#517568}.bx-meeting-times strong{font-size:19px;color:#196c5e;margin:3px 0}.bx-meeting-times span{font-size:10px;line-height:1.6;color:#3e665b;white-space:nowrap}.bx-meeting-middle strong,.bx-meeting-middle small,.bx-meeting-middle span{color:#627b8e}.bx-intervals{display:grid;gap:7px}.bx-intervals>div{display:grid;grid-template-columns:88px 1fr 98px;align-items:center;gap:8px;font-size:13px;border-radius:6px;padding:9px 9px;background:#f3f6f8}.bx-intervals b{font-size:12px;text-align:right;font-weight:600}.bx-intervals>div.bx-interval-hit{background:#eaf5f0;color:#146b5c}.bx-gap-line{height:4px;position:relative;display:block;background:#becdd7;border-radius:3px}.bx-gap-line:before,.bx-gap-line:after{content:"";display:block;width:8px;height:8px;border-radius:100%;position:absolute;top:-2px;background:#8198aa}.bx-gap-line:before{left:0}.bx-gap-line:after{right:0}.bx-gap-cross{background:#83bdac}.bx-gap-cross:before{left:40%;background:#b65e23}.bx-gap-cross:after{right:40%;background:#147e75}.bx-gap-close{width:70%;justify-self:end}.bx-range-check{display:flex;justify-content:space-between;gap:8px;font-size:11px;flex-wrap:wrap;margin-top:12px;color:#637b8b}.bx-range-check b{color:#244c61}.bx-practice-card{margin-top:18px;background:#fff;border:1px solid #d9e3e9;border-radius:16px;padding:24px 26px;scroll-margin-top:20px}.bx-practice-card h3{font-size:20px;line-height:1.5;margin:5px 0 12px}.bx-practice-card h3:focus{outline:none}.bx-problem{font-size:15px;line-height:1.8;margin:0 0 15px}.bx-problem strong{font-weight:650}.bx-givens{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 18px}.bx-givens>span{font-size:12px;background:#eef3f7;color:#47677b;border-radius:6px;padding:5px 9px}.bx-choices{display:grid;grid-template-columns:1fr 1fr;gap:10px;max-width:740px}.bx-choice{display:flex;gap:10px;align-items:center;text-align:left;background:#fff;color:#1b3c50;border:1.5px solid #bfd0dc;border-radius:10px;min-height:56px;padding:11px 13px;font:inherit;font-size:16px;cursor:pointer}.bx-choice:hover{border-color:#779bad;background:#f7fafb}.bx-letter{display:flex;justify-content:center;align-items:center;flex:none;width:25px;height:25px;border-radius:6px;background:#eff4f7;font-size:12px;font-weight:650;color:#57778a}.bx-mark{margin-left:auto;font-weight:700}.bx-choice.bx-correct{background:#eaf7f0;border-color:#32947c}.bx-correct .bx-letter{background:#cee9dd;color:#176d58}.bx-choice.bx-wrong{background:#fff3e9;border-color:#c88c63}.bx-wrong .bx-letter{background:#f7dfce;color:#975b31}.bx-choice:focus-visible,.bx-tools summary:focus-visible{outline:3px solid #7aaec6;outline-offset:3px}.bx-feedback{padding:12px 14px;margin:15px 0 0;border-radius:9px;background:#fff3e9;color:#93582c;font-size:14px;line-height:1.75}.bx-feedback.bx-correct{background:#edf8f1;color:#1d6c55}.bx-feedback strong{font-weight:650}.bx-tools{margin-top:18px;display:grid;gap:10px}.bx-tools details{border-top:1px solid #e5ebf0;padding-top:10px;font-size:14px;line-height:1.75;color:#4b6b80}.bx-tools summary{cursor:pointer;font-weight:600;color:#355f76}.bx-tools p{margin:10px 0 0}.bx-distance-plan{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:15px}.bx-distance-plan>div{display:flex;flex-direction:column;gap:5px;padding:14px;background:#f2f7f8;border-radius:9px;text-align:center}.bx-distance-plan span{font-size:12px}.bx-distance-plan b{font-size:23px;color:#246e65}.bx-distance-plan small{font-size:12px}.bx-distance-plan strong{font-size:14px;color:#254a61;line-height:1.7}.bx-endpoint-figure{max-width:540px;border-radius:10px;background:#f2f7f8;padding:14px 12px;margin-top:15px}.bx-endpoint-figure svg{display:block;width:100%}.bx-endpoint-equation{font-size:15px;text-align:center;color:#234c60}.bx-endpoint-equation strong{color:#147e75;font-size:20px}
+@media(max-width:720px){.bx-map{grid-template-columns:1fr}.bx-map-cell:nth-child(odd){border-right:0}.bx-map-cell:nth-last-child(2){border-bottom:1px solid #e0e8ed}.bx-map-cell{padding:19px 20px}.bx-section h2{font-size:21px}.bx-practice-card{padding:20px}.bx-practice-card h3{font-size:18px}.bx-section{margin-top:28px}.bx-meeting-times span{font-size:11px}.bx-meeting-times strong{font-size:20px}}
+@media(max-width:420px){.bx-map-cell{padding:17px 14px}.bx-map-cell h3{font-size:15px;gap:7px}.bx-zero{font-size:12px;grid-template-columns:1fr 10px 1fr 10px 1fr 24px}.bx-zero-result{font-size:12px}.bx-coordinate-strip strong{font-size:19px}.bx-meeting-times{gap:6px;grid-template-columns:1fr}.bx-meeting-times>div{display:grid;grid-template-columns:1fr 1fr;align-items:center;padding:7px 12px}.bx-meeting-times small{font-size:12px}.bx-meeting-times span{font-size:12px;grid-column:1/-1}.bx-meeting-times strong{font-size:18px}.bx-svg-text,.bx-svg-strong{font-size:18px}.bx-svg-meta{font-size:15px}.bx-intervals>div{grid-template-columns:78px 1fr 88px;padding:8px 6px;font-size:12px;gap:6px}.bx-intervals b{font-size:11px}.bx-practice-card{padding:19px 14px}.bx-choices{gap:8px}.bx-choice{font-size:14px;gap:6px;padding:10px 8px;min-height:58px}.bx-letter{width:21px;height:23px;font-size:11px}.bx-distance-plan{grid-template-columns:1fr}.bx-endpoint-equation{font-size:12px}.bx-givens{gap:6px}.bx-givens>span{font-size:11px}.bx-section-head p{font-size:13px}}
+</style></head><body>
+<main class="app" id="lesson-app">
+<header class="mast"><div><div class="brand">数学 · 看懂每一步</div><h1>一边前进，一边折返</h1><p class="intro">沿着时间线，找出两点相距1的全部时刻。</p></div><div class="mast-right"><span class="badge">数轴动点 · 动画互动课</span><button type="button" class="download-btn" id="download-html"><svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M12 3v12m-4-4 4 4 4-4M4 15v5h16v-5"/></svg>下载 HTML</button></div></header>
+<p id="download-status" class="download-status" role="status"></p>
+<details class="problem" id="original-problem"><summary>查看原题与运动规则</summary>
+<p>数轴上A、B、C分别表示有理数a、b、c，满足 <strong>|a＋30|＋|b＋10|＋|c−14|＝0</strong>。</p>
+<p>P从A出发，以2单位/秒一直向右。P运动5秒后，长为6的线段MN开始运动，初始M与B重合，N在M右边。MN以3单位/秒向右；N到C后立即向左折返，M回到B后再次向右，如此往返。Q是MN的中点，t从P出发时开始计。</p>
+<div class="givens"><span>P：向右2单位/秒</span><span>MN：晚出发5秒</span><span>MN＝6，速度3单位/秒</span><span>右端碰C，左端回B</span></div>
+<ol><li>求a、b、c。</li><li>P与C重合时，求t和N表示的数。</li><li>P与Q相距1时，求t的所有值。</li></ol>
+</details>
+<nav class="nav" id="step-nav" aria-label="讲解步骤"></nav>
+<section class="lesson" id="lesson-stage" aria-labelledby="stage-title"></section>
+<p class="footnote">选对后自动进入下一步；选错可按提示重选。动画可暂停，也可点选关键时刻。</p>
+<section class="bx-section" id="thinking" aria-labelledby="bx-thinking-title">
+  <div class="bx-section-head"><span class="bx-kicker">这道题的数学思维</span><h2 id="bx-thinking-title">一图记住：先定时刻，再看距离</h2></div>
+  <div class="bx-map" role="group" aria-label="四个解题关系：非负性、折返时刻、相遇前后、检查全部时段">
+    <section class="bx-map-cell"><h3><span>01</span> 三个非负数，加起来是 0</h3>
+      <div class="bx-zero"><span>|a＋30|</span><b>＋</b><span>|b＋10|</span><b>＋</b><span>|c−14|</span><b>＝0</b></div>
+      <div class="bx-zero bx-zero-result"><span>＝0</span><b></b><span>＝0</span><b></b><span>＝0</span><b></b></div>
+      <div class="bx-coordinate-strip"><span>A <strong>−30</strong></span><span>B <strong>−10</strong></span><span>C <strong>14</strong></span></div>
+      <p class="bx-map-caption">每一项都不能小于 0，只能各自等于 0。</p>
+    </section>
+    <section class="bx-map-cell"><h3><span>02</span> 每次折返，都把时间分一段</h3>
+      <p class="bx-small-equation">单程移动距离：24 − 6 ＝ 18</p>
+      <p class="bx-small-equation">单程时间：18 ÷ 3 ＝ <strong>6 秒</strong></p>
+      <div class="bx-time-map" role="img" aria-label="P开始运动后第5秒线段开始运动，第11秒右端折返，第17秒左端折返，第23秒右端折返，各段6秒">
+        <div class="bx-time-stops"><span><b>5</b><small>出发</small></span><span><b>11</b><small>折返</small></span><span><b>17</b><small>折返</small></span><span><b>23</b><small>折返</small></span></div>
+        <div class="bx-time-legs"><span>6 秒 →</span><span>← 6 秒</span><span>6 秒 →</span></div>
+      </div>
+      <p class="bx-map-caption">时刻都从 P 出发开始算，别漏掉前 5 秒。</p>
+    </section>
+    <section class="bx-map-cell bx-meeting-cell"><h3><span>03</span> 相距 1：相遇前一次，相遇后一次</h3>
+      <svg class="bx-gap-figure" viewBox="0 0 420 112" role="img" aria-label="第11秒P在负8，Q在11，相距19。P向右速度2，Q向左速度3，每秒距离缩短5。"><defs><marker id="bx-a1" markerWidth="7" markerHeight="7" refX="5" refY="3.5" orient="auto"><path d="M0 0L7 3.5L0 7" fill="#b65e23"/></marker><marker id="bx-a2" markerWidth="7" markerHeight="7" refX="5" refY="3.5" orient="auto"><path d="M0 0L7 3.5L0 7" fill="#147e75"/></marker></defs><text x="210" y="17" text-anchor="middle" class="bx-svg-meta">t ＝ 11 秒</text><line x1="55" y1="62" x2="365" y2="62" stroke="#aebbc7" stroke-width="2"/><circle cx="55" cy="62" r="7" fill="#b65e23"/><circle cx="365" cy="62" r="7" fill="#147e75"/><path d="M72 42H132" stroke="#b65e23" stroke-width="2.5" marker-end="url(#bx-a1)"/><path d="M348 42H288" stroke="#147e75" stroke-width="2.5" marker-end="url(#bx-a2)"/><text x="101" y="31" text-anchor="middle" class="bx-svg-text">2</text><text x="319" y="31" text-anchor="middle" class="bx-svg-text">3</text><text x="210" y="55" text-anchor="middle" class="bx-svg-strong">距离 19</text><text x="55" y="89" text-anchor="middle" class="bx-svg-text">P：−8</text><text x="365" y="89" text-anchor="middle" class="bx-svg-text">Q：11</text><text x="210" y="109" text-anchor="middle" class="bx-svg-meta">相向靠近：每秒缩短 2 ＋ 3 ＝ 5</text></svg>
+      <div class="bx-meeting-times"><div><small>相遇前，相距 1</small><strong>14.6 秒</strong><span>11 ＋ (19 − 1) ÷ 5</span></div><div class="bx-meeting-middle"><small>相遇</small><strong>14.8 秒</strong><span>距离 0</span></div><div><small>相遇后，相距 1</small><strong>15 秒</strong><span>11 ＋ (19 ＋ 1) ÷ 5</span></div></div>
+    </section>
+    <section class="bx-map-cell"><h3><span>04</span> 检查别的时段，防止漏解</h3>
+      <div class="bx-intervals"><div><span>0～11 秒</span><i class="bx-gap-line bx-gap-wide"></i><b>距离 ≥ 13</b></div><div class="bx-interval-hit"><span>11～17 秒</span><i class="bx-gap-line bx-gap-cross"></i><b>找到两次</b></div><div><span>17～23 秒</span><i class="bx-gap-line bx-gap-close"></i><b>11 → 5</b></div><div><span>23 秒以后</span><i class="bx-gap-line bx-gap-wide"></i><b>距离 ≥ 5</b></div></div>
+      <div class="bx-range-check"><span>Q 最右只能到 <b>11</b></span><span>t＝23 时，P 已到 <b>16</b></span></div>
+      <p class="bx-map-caption">P 继续向右，之后不可能再相距 1。</p>
+    </section>
+  </div>
+</section>
+
+<section class="bx-section" id="practice" aria-labelledby="bx-practice-title">
+  <div class="bx-section-head"><span class="bx-kicker">换个条件，再试一次</span><h2 id="bx-practice-title">两道变化训练</h2><p>点选答案，答对后自动继续。</p></div>
+  <article class="bx-practice-card" id="practice-1" aria-labelledby="bx-p1-title">
+    <span class="bx-kicker">训练一 · 距离从 1 改成 2</span><h3 id="bx-p1-title" tabindex="-1">P、Q 相距 2 个单位，发生在什么时候？</h3>
+    <p class="bx-problem">沿用原题的出发位置、速度和折返规则，只把“相距 1”改为<strong>“相距 2”</strong>。求所有符合条件的时刻 t。</p>
+    <div class="bx-givens"><span>t＝11 时，两点相距 19</span><span>P 向右 2，Q 向左 3</span></div>
+    <div class="bx-choices" role="group" aria-label="训练一：选择P和Q相距2的全部时刻">
+      <button class="bx-choice" type="button" data-bx-question="0" data-bx-option="0" aria-pressed="false"><span class="bx-letter">A</span><span>只有 14.4 秒</span><span class="bx-mark" aria-hidden="true"></span></button>
+      <button class="bx-choice" type="button" data-bx-question="0" data-bx-option="1" aria-pressed="false"><span class="bx-letter">B</span><span>14.4 秒、15.2 秒</span><span class="bx-mark" aria-hidden="true"></span></button>
+      <button class="bx-choice" type="button" data-bx-question="0" data-bx-option="2" aria-pressed="false"><span class="bx-letter">C</span><span>3.4 秒、4.2 秒</span><span class="bx-mark" aria-hidden="true"></span></button>
+      <button class="bx-choice" type="button" data-bx-question="0" data-bx-option="3" aria-pressed="false"><span class="bx-letter">D</span><span>只有 14.8 秒</span><span class="bx-mark" aria-hidden="true"></span></button>
+    </div>
+    <div class="bx-feedback" id="bx-feedback-0" role="status" aria-live="polite" hidden></div>
+    <div class="bx-tools"><details><summary>看一点提示</summary><p>相遇前，先把 19 的间距缩到 2；相遇后，再从 0 分开到 2。两种情况都要算。</p></details><details class="bx-solution"><summary>查看图解与答案</summary>
+      <div class="bx-distance-plan"><div><span>相遇前</span><b>19 → 2</b><small>间距缩短 17</small><strong>11 ＋ 17 ÷ 5 ＝ 14.4</strong></div><div><span>相遇后</span><b>19 → 0 → 2</b><small>两点合计移动 21</small><strong>11 ＋ 21 ÷ 5 ＝ 15.2</strong></div></div>
+      <p>其他时段的距离至少为 5 或 13，不会等于 2。因此全部答案是 <strong>14.4 秒和 15.2 秒</strong>，即 72/5 秒和 76/5 秒。</p>
+    </details></div>
+  </article>
+  <article class="bx-practice-card" id="practice-2" aria-labelledby="bx-p2-title">
+    <span class="bx-kicker">训练二 · 换一个观察时刻</span><h3 id="bx-p2-title" tabindex="-1">t＝20 秒时，右端点 N 在哪里？</h3>
+    <p class="bx-problem">原题所有条件不变。注意 t 仍从 <strong>P 出发时</strong>开始计时；这次问的是<strong>右端点 N</strong>表示的数。</p>
+    <div class="bx-givens"><span>t＝17 时，M 回到 −10</span><span>MN 长 6，随后向右走</span></div>
+    <div class="bx-choices" role="group" aria-label="训练二：选择第20秒右端点N的坐标">
+      <button class="bx-choice" type="button" data-bx-question="1" data-bx-option="0" aria-pressed="false"><span class="bx-letter">A</span><span>−1</span><span class="bx-mark" aria-hidden="true"></span></button>
+      <button class="bx-choice" type="button" data-bx-question="1" data-bx-option="1" aria-pressed="false"><span class="bx-letter">B</span><span>2</span><span class="bx-mark" aria-hidden="true"></span></button>
+      <button class="bx-choice" type="button" data-bx-question="1" data-bx-option="2" aria-pressed="false"><span class="bx-letter">C</span><span>5</span><span class="bx-mark" aria-hidden="true"></span></button>
+      <button class="bx-choice" type="button" data-bx-question="1" data-bx-option="3" aria-pressed="false"><span class="bx-letter">D</span><span>14</span><span class="bx-mark" aria-hidden="true"></span></button>
+    </div>
+    <div class="bx-feedback" id="bx-feedback-1" role="status" aria-live="polite" hidden></div>
+    <div class="bx-tools"><details><summary>看一点提示</summary><p>从第 17 秒到第 20 秒，只走了 3 秒。此段开始时 N 在 −4，向右走时坐标增加。</p></details><details class="bx-solution"><summary>查看图解与答案</summary>
+      <div class="bx-endpoint-figure"><div class="bx-endpoint-equation">N：−4 ＋ 3 × (20 − 17) ＝ <strong>5</strong></div><svg viewBox="0 0 480 120" role="img" aria-label="第20秒，线段左端M在负1，中点Q在2，右端N在5；M到Q、Q到N各3个单位。"><line x1="35" y1="67" x2="445" y2="67" stroke="#b7c4cd" stroke-width="2"/><line x1="90" y1="67" x2="390" y2="67" stroke="#147e75" stroke-width="7" stroke-linecap="round"/><circle cx="90" cy="67" r="7" fill="#147e75"/><circle cx="240" cy="67" r="7" fill="#fff" stroke="#147e75" stroke-width="3"/><circle cx="390" cy="67" r="8" fill="#147e75"/><text x="90" y="42" text-anchor="middle" class="bx-svg-text">M</text><text x="240" y="42" text-anchor="middle" class="bx-svg-text">Q</text><text x="390" y="42" text-anchor="middle" class="bx-svg-strong">N</text><text x="90" y="96" text-anchor="middle" class="bx-svg-text">−1</text><text x="240" y="96" text-anchor="middle" class="bx-svg-text">2</text><text x="390" y="96" text-anchor="middle" class="bx-svg-strong">5</text><text x="165" y="59" text-anchor="middle" class="bx-svg-meta">3</text><text x="315" y="59" text-anchor="middle" class="bx-svg-meta">3</text></svg></div>
+      <p>M、Q、N 是三个不同的点，先认准题目问谁，再读坐标。</p>
+    </details></div>
+  </article>
+</section>
+<p class="doc-bottom">时间单位：秒 · 距离与坐标均使用题目中的单位长度</p>
+</main>
+<script data-offline>
+(function(){
+ 'use strict';
+ function at(t){
+   t=Math.max(0,Number(t)||0);
+   const p=2*t-30;
+   let q=-7,dir=0;
+   if(t>=5){const r=(t-5)%12;dir=r<6?1:-1;q=r<=6?-7+3*r:29-3*r;}
+   return {t,p,q,m:q-3,n:q+3,gap:Math.abs(p-q),dir};
+ }
+ function fmt(n){const v=Math.abs(n)<1e-8?0:n;return Number(v.toFixed(2)).toString().replace('-','−');}
+ window.BounceMath={at,fmt};
+})();
+
+</script>
+<script data-offline>
+(function(){
+'use strict';
+const {at,fmt}=window.BounceMath;
+const stage=document.getElementById('lesson-stage'),nav=document.getElementById('step-nav');
+const reduced=()=>window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+const steps=[
+ {short:'定坐标',title:'三个非负数相加，怎样才会等于0？',lead:'绝对值不会小于0。总和是0，三个绝对值就<strong>只能各自等于0</strong>。',question:'A、B、C分别表示哪个数？',options:['30，10，−14','−30，10，14','−30，−10，14','30，−10，−14'],correct:2,good:'正确：a＝−30，b＝−10，c＝14。',wrong:['把绝对值里面的式子分别设为0：a＋30＝0，所以a不是30。','b＋10＝0，要用−10才能抵消＋10。','','c−14＝0，所以c＝14；a＋30＝0，所以a＝−30。'],solution:'三个绝对值都≥0，和为0，所以：<br><span class="math">a＋30＝0，b＋10＝0，c−14＝0。<br>a＝−30，b＝−10，c＝14。</span>'},
+ {short:'找折返',title:'线段走一趟，只需走18个单位',lead:'开始时N已经在B右边6个单位。向右移动时，<strong>N先碰到C就折返</strong>，不用等M到C。',question:'线段MN从左端运动到右端，单程需要几秒？',options:['8秒','6秒','12秒','2秒'],correct:1,good:'正确：实际移动18个单位，18÷3＝6秒。',wrong:['8秒是24÷3；线段右端N开始时已在B右边6个单位，实际只移动18。','','12秒是一个来回，单程只用6秒。','2秒是6÷3，6是线段自己的长度，不是这次移动的距离。'],solution:'<span class="math">BC＝14−(−10)＝24。<br>单程移动距离＝BC−MN＝24−6＝18。<br>单程时间＝18÷3＝6秒。</span><br>MN从t＝5开始，折返时刻依次是t＝11、17、23……',start:5,end:17,speed:1.5,initial:5,keys:[5,11,17]},
+ {short:'求N位置',title:'P到达C时，N已经往返到哪里？',lead:'P要走44个单位，用<strong>22秒</strong>。MN晚出发5秒，这时只运动了<strong>17秒＝6＋6＋5</strong>。',question:'P与C重合时，t和N表示的数分别是多少？',options:['t＝22秒，N＝14','t＝17秒，N＝11','t＝22秒，N＝11','t＝22秒，N＝8'],correct:2,good:'正确：t＝22秒，N＝−4＋3×5＝11。',wrong:['N在t＝11、23时碰到C；t＝22还没到下一次折返。','17秒是MN已运动的时间，题目的t从P出发时开始计时，应为22秒。','','8是此时中点Q的坐标；右端N比Q大3，所以N＝11。'],solution:'<span class="math">AC＝14−(−30)＝44，t＝44÷2＝22秒。</span><br>MN实际运动：22−5＝17秒。先右行6秒，再左行6秒，回到初始位置；然后又右行5秒。<br><span class="math">N＝−4＋3×5＝11。</span>',start:5,end:22,speed:2,initial:22,keys:[5,11,17,22]},
+ {short:'看相向',title:'第11秒折返后，两点每秒靠近多少？',lead:'只跟踪中点Q：它与线段同速，仍是<strong>3单位/秒</strong>。第11秒，P在−8，Q在11，两点相距19。',question:'P向右、Q向左时，两点每秒靠近几个单位？',options:['5个单位','1个单位','3个单位','6个单位'],correct:0,good:'正确：两边都在缩短间隔，每秒靠近2＋3＝5。',wrong:['','只有同向追赶才用3−2；现在两点相向，两边都在缩短间隔。','还要算上P每秒向右走的2个单位。','6是线段的长度，与两点每秒靠近多少无关。'],solution:'t＝11时：<span class="math">P＝−30＋2×11＝−8，Q＝14−3＝11。</span><br>间隔为11−(−8)＝19。相向时每秒靠近2＋3＝5。<br><span class="math">还需19÷5＝3.8秒相遇；相遇时刻是11＋3.8＝14.8秒。</span>',start:11,end:14.8,speed:.6,initial:11,keys:[11,12,13,14.8]},
+ {short:'找两次',title:'相距1：相遇前一次，相遇后一次',lead:'两点在<strong>14.8秒</strong>相遇。相对移动1个单位只需<strong>1÷5＝0.2秒</strong>，就在相遇时刻的前后各找一次。',question:'P与Q相距1个单位时，t是多少？',options:['只有14.6秒','14.6秒和15秒','14.8秒和15秒','13.8秒和15.8秒'],correct:1,good:'正确：14.8−0.2＝14.6，14.8＋0.2＝15。',wrong:['别漏掉相遇之后：P、Q互相越过，继续分开到1。','','14.8秒两点相遇，距离是0，还不是1。','1个单位不是1秒；相对速度为5，走完1个单位只用0.2秒。'],solution:'<span class="math">相遇时刻＝11＋19÷5＝14.8秒。<br>相对移动1需要1÷5＝0.2秒。</span><br>因此：<span class="math">t₁＝14.8−0.2＝14.6＝73/5秒；t₂＝14.8＋0.2＝15秒。</span><br>两次都在11～17秒之间，期间Q持续向左，计算有效。',start:14.2,end:15.4,speed:.2,initial:14.6,keys:[14.6,14.8,15],zoom:true},
+ {short:'查漏解',title:'继续追赶，会不会还有第三次？',lead:'第17秒，Q在P后方11个单位；它每秒只追近1，追6秒就必须折返，<strong>最近仍相距5</strong>。',question:'第23秒以后，为什么不可能再相距1？',options:['因为线段MN停止运动','因为P、Q的速度变成相同','P已超过Q能到的最右位置，并继续向右','因为P、Q每12秒回到原来的位置'],correct:2,good:'正确：t＝23时P＝16，Q最右只能到11，之后P继续向右。全程只有两次。',wrong:['MN还在不断往返，并没有停止。','P速度一直是2，Q运动时速度一直是3。','','只有MN的位置每12秒重复；P一直向右，两者相对位置不会重复。'],solution:'0～5秒：距离23→13；5～11秒：距离13→19，都大于1。<br>11～17秒：距离19→0→11，出现14.6、15这两次。<br>17～23秒：同向追赶，距离11−(3−2)×6＝5，仍大于1。<br>23秒后：<span class="math">P≥16，而Q≤11，所以PQ≥5。</span><br>因此全部解是<span class="math">t＝73/5秒或15秒</span>。',start:17,end:24,speed:1,initial:23,keys:[17,20,23,24],bounds:true}
+];
+let step=0,unlocked=0,selected=Array(6).fill(null),solved=Array(6).fill(false),time=0,raf=0,motionToken=0,playing=false,advanceTimer=0;
+const $=id=>document.getElementById(id);
+function svgScene(t,zoom=false,bounds=false){
+ const s=at(t),compact=window.innerWidth<520,W=compact?500:860,left=compact?32:46,right=compact?468:814,lo=zoom?-3:-32,hi=zoom?2:20,X=v=>left+(v-lo)/(hi-lo)*(right-left);
+ const px=X(s.p),qx=X(s.q),mx=X(s.m),nx=X(s.n),arrow=(x,y,dir,color)=>`<path d="M${x} ${y}h${dir*33}m${-dir*9} -5l${dir*9} 5l${-dir*9} 5" fill="none" stroke="${color}" stroke-width="2.5"/>`;
+ const ticks=zoom?[-2,-1,0,1]:[-30,-20,-10,0,10,14];
+ const tickHTML=ticks.map(v=>{const label=!zoom&&v===-30?'A':!zoom&&v===-10?'B':!zoom&&v===14?'C':'';return `<path d="M${X(v)} 186v12" stroke="#91a4b4" stroke-width="1.4"/><text x="${X(v)}" y="220" text-anchor="middle" class="axis-label ${!zoom&&(v===-20||v===10)?'secondary-tick':''}">${label?label+' ':''}${fmt(v)}</text>`;}).join('');
+ const range=bounds?`<rect x="${X(-7)}" y="28" width="${X(11)-X(-7)}" height="19" rx="5" fill="#cfe8df"/><text x="${(X(-7)+X(11))/2}" y="19" text-anchor="middle" class="scene-note">Q始终在−7到11之间</text>`:'';
+ const segment=zoom?`<text x="48" y="25" class="scene-note">局部放大 · 看清谁在左、谁在右</text>`:`${range}<path d="M${mx} 72H${nx}" stroke="#137c72" stroke-width="9" stroke-linecap="round"/><circle cx="${mx}" cy="72" r="6" fill="#137c72"/><circle cx="${nx}" cy="72" r="6" fill="#137c72"/><text x="${mx}" y="49" text-anchor="middle" fill="#137c72" class="point-letter">M</text><text x="${nx}" y="49" text-anchor="middle" fill="#137c72" class="point-letter">N</text><text x="${mx}" y="103" text-anchor="middle" fill="#137c72" class="coord">${fmt(s.m)}</text><text x="${nx}" y="103" text-anchor="middle" fill="#137c72" class="coord">${fmt(s.n)}</text>`;
+ return `<svg class="motion-svg" viewBox="0 0 ${W} 244" role="img" aria-label="第${fmt(t)}秒，P在${fmt(s.p)}，Q在${fmt(s.q)}，M在${fmt(s.m)}，N在${fmt(s.n)}，PQ距离${fmt(s.gap)}。${zoom?'局部放大。':''}"><path d="M${compact?20:30} 192H${W-27}l-9-5m9 5l-9 5" stroke="#70879a" stroke-width="1.7" fill="none"/>${tickHTML}${segment}<path d="M${qx} 78V188" stroke="#137c72" stroke-opacity=".35" stroke-width="1.5" stroke-dasharray="4 5"/><circle cx="${qx}" cy="72" r="8" fill="#fff" stroke="#137c72" stroke-width="3"/><text x="${qx}" y="49" text-anchor="middle" fill="#137c72" class="point-letter">Q</text><text x="${qx}" y="103" text-anchor="middle" fill="#137c72" class="coord">${fmt(s.q)}</text><path d="M${px} 144V188" stroke="#bc5b20" stroke-opacity=".4" stroke-width="1.5" stroke-dasharray="4 5"/><circle cx="${px}" cy="139" r="9" fill="#bc5b20"/><text x="${px}" y="124" text-anchor="middle" fill="#bc5b20" class="point-letter">P</text><text x="${px}" y="166" text-anchor="middle" fill="#bc5b20" class="coord">${fmt(s.p)}</text>${arrow(px+14,139,1,'#bc5b20')}${s.dir&&!bounds?arrow(qx+(s.dir===1?17:-17),zoom?72:8,s.dir,'#137c72'):''}</svg>`;
+}
+function stageVisual(){
+ const d=steps[step];
+ if(step===0)return `<div class="visual"><div class="zero-row"><div class="zero-box"><div class="expression">|a＋30|</div><small>≥0</small></div><div class="zero-box"><div class="expression">|b＋10|</div><small>≥0</small></div><div class="zero-box"><div class="expression">|c−14|</div><small>≥0</small></div></div><div class="zero-bridge">三个数都不能小于0，总和却是0<strong>每一项只能等于0</strong></div><div class="zero-results"><span>a＋30＝0</span><span>b＋10＝0</span><span>c−14＝0</span></div></div>`;
+ const length=step===1?`<div class="length-plan" role="img" aria-label="B到C长24；初始MN占6，N到C还剩18，这就是线段单程移动的距离。"><div class="length-labels"><span>M / B</span><span>N</span><span>C</span></div><div class="length-rail"><i></i><b></b></div><div class="length-words"><span>已占6</span><span>N还需走18</span></div><div class="length-brace">BC＝24</div></div>`:'';
+ return `<div class="visual">${length}<div class="visual-head"><div class="visual-title">${d.zoom?'放大看相遇前后':'同一条数轴 · 两条轨迹上下错开，方便观察'}</div><div class="clock" id="scene-clock"></div></div><div id="motion-scene"></div><div class="readouts"><div class="readout p"><span>P的位置</span><strong id="value-p"></strong></div><div class="readout q"><span>Q的位置</span><strong id="value-q"></strong></div><div class="readout"><span>N的位置</span><strong id="value-n"></strong></div><div class="readout"><span>PQ距离</span><strong id="value-gap"></strong></div></div><div class="motion-controls"><button type="button" class="btn" data-action="play" id="play-button">播放本段</button><button type="button" class="btn" data-action="rewind">回到本段起点</button><div class="legend"><span><i class="key-dot"></i>P：向右2/秒</span><span><i class="key-dot teal"></i>MN、Q：3/秒</span></div></div><div class="time-keys">${d.keys.map(t=>`<button type="button" data-time="${t}">${t}秒${t===11?' · 首次折返':t===17?' · 回到左端':t===23?' · 再到右端':''}</button>`).join('')}</div><p id="motion-caption" class="motion-caption"></p></div>${extraVisual()}`;
+}
+function extraVisual(){
+ if(step===1)return `<div class="insight"><div><small>两端间的距离</small><strong>BC＝24</strong></div><div class="teal"><small>线段已经占了6</small><strong>24−6＝18</strong></div><div><small>每秒移动3</small><strong>18÷3＝6秒</strong></div></div><div class="equation-line">t从P出发开始计：<strong>5 → 11 → 17 → 23</strong>，每隔6秒折返。</div>`;
+ if(step===2)return `<div class="insight"><div class="orange"><small>P到C的时间</small><strong>44÷2＝22秒</strong></div><div><small>MN实际运动时间</small><strong>22−5＝17秒</strong></div><div class="teal"><small>再向右5秒后的N</small><strong>−4＋15＝11</strong></div></div><div class="timeline" role="img" aria-label="P计时0到5，MN等待5秒；5到11向右6秒；11到17向左6秒；17到22再向右5秒。"><div><span>0～5秒</span><strong>MN等待5秒</strong></div><div class="right"><span>5～11秒</span><strong>向右6秒 →</strong></div><div class="left"><span>11～17秒</span><strong>← 向左6秒</strong></div><div class="right"><span>17～22秒</span><strong>向右5秒 →</strong></div></div>`;
+ if(step===3)return `<div class="insight"><div class="orange"><small>第11秒的P</small><strong>−30＋2×11＝−8</strong></div><div class="teal"><small>Q在C的左边3</small><strong>14−3＝11</strong></div><div><small>两点相距</small><strong>11−(−8)＝19</strong></div></div><div class="equation-line">P向右走2 ＋ Q向左走3 → <strong>间隔每秒缩短5</strong></div>`;
+ if(step===4)return `<div class="meeting-cards"><button type="button" class="meeting-card" data-time="14.6"><small>相遇前0.2秒</small><strong>14.6秒</strong><div class="mini-dots"><span class="mini-p">P</span><span class="mini-gap"></span><span class="mini-q">Q</span></div></button><button type="button" class="meeting-card" data-time="14.8"><small>刚好相遇</small><strong>14.8秒</strong><div class="mini-dots mini-meet">P、Q重合</div></button><button type="button" class="meeting-card" data-time="15"><small>相遇后0.2秒</small><strong>15秒</strong><div class="mini-dots"><span class="mini-q">Q</span><span class="mini-gap"></span><span class="mini-p">P</span></div></button></div><div class="equation-line">相遇：<strong>11＋19÷5＝14.8秒</strong><br>相距1：<strong>14.8−0.2</strong> 和 <strong>14.8＋0.2</strong></div>`;
+ if(step===5)return `<div class="intervals" role="table" aria-label="按运动方向分段，检查是否还有其他解"><div class="interval-row" role="row"><span class="label">0～5秒</span><b>23 → 13</b><span class="result">仍大于1</span></div><div class="interval-row" role="row"><span class="label">5～11秒</span><b>13 → 19</b><span class="result">越走越远</span></div><div class="interval-row hit" role="row"><span class="label">11～17秒</span><b>19 → 0 → 11</b><span class="result">两次等于1</span></div><div class="interval-row" role="row"><span class="label">17～23秒</span><b>11 → 5</b><span class="result">还没追上</span></div><div class="interval-row" role="row"><span class="label">23秒以后</span><b>P≥16，Q≤11</b><span class="result">距离≥5</span></div></div><div class="after-proof">MN每12秒重复，<strong>P一直向右，两者的相对位置不会重复。</strong></div>`;
+ return '';
+}
+function caption(t){
+ if(step===4){if(Math.abs(t-14.6)<.015)return 'P在Q左边，距离1：这是相遇前的一次。';if(Math.abs(t-14.8)<.015)return 'P、Q同在−0.4，距离0：这才是相遇。';if(Math.abs(t-15)<.015)return 'P已经越过Q，距离又是1：相遇后还有一次。';return t<14.8?'相遇前：P在左、Q在右，两点逐渐靠近。':'相遇后：左右次序交换，两点逐渐分开。';}
+ if(Math.abs(t-5)<.01)return 'P已经运动5秒；此刻MN才开始向右。M＝−10，N＝−4。';
+ if(Math.abs(t-11)<.01)return 'N到达C＝14，线段立即向左折返。Q只能到11。';
+ if(Math.abs(t-17)<.01)return 'M回到B＝−10，线段立即再次向右；P此时在4。';
+ if(Math.abs(t-22)<.01)return 'P刚好到C＝14；此时M＝5、Q＝8、N＝11。';
+ if(Math.abs(t-23)<.01)return 'N再次到C；此时P＝16，已经超过Q最右能到的11。';
+ if(t>23)return 'Q仍在−7与11之间往返；P越过16后继续向右，不会再靠近到1。';
+ return at(t).dir>0?'MN向右：P与Q同向，每秒的距离变化要看谁在前面。':'MN向左：P仍向右，先相向靠近，越过彼此后再分开。';
+}
+function setTime(t){
+ if(step===0)return;time=t;const s=at(t),d=steps[step];
+ $('motion-scene').innerHTML=svgScene(t,!!d.zoom,!!d.bounds);
+ $('scene-clock').innerHTML=`t＝${fmt(t)}秒<small>MN已运动${fmt(Math.max(0,t-5))}秒</small>`;
+ for(const [id,v] of [['p',s.p],['q',s.q],['n',s.n],['gap',s.gap]])$('value-'+id).textContent=fmt(v);
+ $('motion-caption').textContent=caption(t);
+ stage.querySelectorAll('[data-time]').forEach(b=>b.classList.toggle('active',Math.abs(Number(b.dataset.time)-t)<.015));
+}
+function stopMotion(){motionToken++;if(raf)cancelAnimationFrame(raf);raf=0;playing=false;const b=$('play-button');if(b)b.textContent='播放本段';}
+function play(){
+ if(step===0)return;if(playing){stopMotion();return;}
+ const d=steps[step];stopMotion();const token=motionToken;
+ if(reduced()){setTime(d.end);return;}
+ let start=time;if(start>=d.end-.001||start<d.start)start=d.start;
+ setTime(start);playing=true;$('play-button').textContent='暂停动画';let begin=null;
+ function frame(now){if(token!==motionToken||document.hidden)return;if(begin===null)begin=now;const t=Math.min(d.end,start+(now-begin)/1000*d.speed);setTime(t);if(t>=d.end){playing=false;raf=0;$('play-button').textContent='重播本段';return;}raf=requestAnimationFrame(frame);}
+ raf=requestAnimationFrame(frame);
+}
+function renderNav(){nav.innerHTML=steps.map((d,i)=>`<button type="button" data-step="${i}" class="${i===step?'current ':''}${solved[i]?'done':''}" ${i>unlocked?'disabled':''} ${i===step?'aria-current="step"':''}><span class="n">${solved[i]?'✓':String(i+1).padStart(2,'0')}</span>${d.short}</button>`).join('');}
+function renderQuestion(){const d=steps[step];$('question-slot').innerHTML=`<div class="q-label">点选答案，选对自动继续</div><h3 id="question-title">${d.question}</h3><div class="choices" role="group" aria-labelledby="question-title">${d.options.map((v,i)=>`<button type="button" class="choice" data-option="${i}" aria-pressed="false"><span class="letter">${'ABCD'[i]}</span><span>${v}</span><span class="mark" aria-hidden="true"></span></button>`).join('')}</div><div class="feedback" id="answer-feedback" role="status" aria-live="polite" hidden></div><details class="solution" id="step-solution"><summary>查看这一步的解析</summary><p>${d.solution}</p></details>`;if(selected[step]!==null)showSelection(selected[step]);}
+function showSelection(i){const d=steps[step],right=i===d.correct;stage.querySelectorAll('[data-option]').forEach(b=>{const on=Number(b.dataset.option)===i;b.classList.toggle('correct',on&&right);b.classList.toggle('wrong',on&&!right);b.setAttribute('aria-pressed',on?'true':'false');b.querySelector('.mark').textContent=on?(right?'✓':'×'):'';});const feedback=$('answer-feedback');feedback.hidden=false;feedback.className='feedback'+(right?'':' error');feedback.textContent=right?d.good:d.wrong[i];}
+function status(text){const s=$('advance-status');if(s)s.textContent=text;}
+function cancelAdvance(){if(advanceTimer)clearTimeout(advanceTimer);advanceTimer=0;if(selected[step]===steps[step].correct)status('已答对；点选答案可继续');else status('选对后自动继续');}
+function enterPractice(){stopMotion();status('讲解完成');const card=$('practice-1'),title=$('bx-p1-title');if(card)card.scrollIntoView({behavior:reduced()?'auto':'smooth',block:'start'});if(title){title.setAttribute('tabindex','-1');title.focus({preventScroll:true});}}
+function choose(i){
+ cancelAdvance();selected[step]=i;const d=steps[step],right=i===d.correct;showSelection(i);
+ if(right){solved[step]=true;unlocked=Math.max(unlocked,Math.min(5,step+1));renderNav();status(step===5?'答对了，自动进入训练…':'答对了，自动进入下一步…');const from=step;advanceTimer=setTimeout(()=>{advanceTimer=0;if(step!==from||selected[from]!==steps[from].correct||document.hidden)return;if(step<5)go(step+1);else enterPractice();},600);}
+}
+function render(){const d=steps[step];renderNav();stage.innerHTML=`<div class="lesson-header"><div class="eyebrow">第${step+1}步 / 共6步</div><h2 id="stage-title" tabindex="-1">${d.title}</h2><p class="lead">${d.lead}</p></div><div class="lesson-body">${stageVisual()}<section class="question" id="question-slot"></section></div><footer class="lesson-footer"><div class="footer-buttons"><button type="button" class="btn" data-action="back" ${step===0?'disabled':''}>上一步</button>${step>0?'<button type="button" class="btn" data-action="replay">重播本步动画</button>':''}<button type="button" class="btn" data-action="reset">从头开始</button></div><span id="advance-status" class="advance-status" role="status" aria-live="polite">选对后自动继续</span></footer>`;renderQuestion();if(step>0)setTime(d.initial);if(selected[step]===d.correct)status('已答对；点选答案可继续');}
+function go(i){if(i<0||i>unlocked)return;cancelAdvance();window.BounceExtras?.cancelAdvance();stopMotion();step=i;render();$('original-problem').open=false;stage.scrollIntoView({behavior:reduced()?'auto':'smooth',block:'start'});$('stage-title').focus({preventScroll:true});if(!reduced()&&[1,3,4].includes(step)){setTime(steps[step].start);play();}}
+function reset(){cancelAdvance();stopMotion();step=0;unlocked=0;selected=Array(6).fill(null);solved=Array(6).fill(false);time=0;render();window.BounceExtras?.reset();$('original-problem').open=true;}
+// Capture runs before answer handlers: a deliberate new action cancels an old pending advance.
+document.addEventListener('click',()=>{cancelAdvance();window.BounceExtras?.cancelAdvance();},true);
+stage.addEventListener('click',e=>{const b=e.target.closest('button');if(!b||!stage.contains(b))return;if(b.hasAttribute('data-option')){choose(Number(b.dataset.option));return;}if(b.hasAttribute('data-time')){stopMotion();setTime(Number(b.dataset.time));return;}switch(b.dataset.action){case'back':go(step-1);break;case'reset':reset();break;case'play':play();break;case'rewind':stopMotion();setTime(steps[step].start);break;case'replay':stopMotion();setTime(steps[step].start);play();break;}});
+nav.addEventListener('click',e=>{const b=e.target.closest('button[data-step]');if(b&&!b.disabled)go(Number(b.dataset.step));});
+document.addEventListener('visibilitychange',()=>{if(document.hidden){cancelAdvance();stopMotion();window.BounceExtras?.cancelAdvance();}});
+window.addEventListener('pagehide',()=>{cancelAdvance();stopMotion();});
+window.BounceLesson={reset,go,choose,setTime,cancelAdvance,getState:()=>({step,unlocked,selected:[...selected],solved:[...solved],time,playing,advancePending:!!advanceTimer})};
+render();
+})();
+
+</script>
+<script data-offline>
+(() => {
+  'use strict';
+  const root=document.getElementById('practice');
+  if(!root)return;
+  const answers=[1,2],chosen=[null,null];
+  const handledClicks=new WeakSet();
+  let advanceTimer=null,advanceToken=0;
+  const reduceMotion=()=>window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const feedback=[
+    [
+      '14.4 秒是相遇前的一次。相遇后，两点还会从距离 0 分开到 2，再找另一个时刻。',
+      '<strong>正确。</strong>相遇前：11＋17÷5＝14.4；相遇后：11＋21÷5＝15.2。自动进入训练二…',
+      '3.4 秒和 4.2 秒是从第 11 秒开始又经过的时间。题目中的 t 从 P 出发时算起，要分别加上 11。',
+      '14.8 秒是两点相遇的时刻，此时距离为 0。相距 2 会发生在相遇前、后。'
+    ],
+    [
+      '−1 是左端点 M 的坐标。题目问右端点 N，要在 M 的坐标上加上线段长 6。',
+      '2 是中点 Q 的坐标。右端点 N 还在 Q 的右边 3 个单位。',
+      '<strong>正确，本题已完成。</strong>从第 17 秒起又向右走 3 秒，N＝−4＋3×3＝5。',
+      '14 是右侧折返点，N 要到第 23 秒才到达那里。第 20 秒还没到折返点。'
+    ]
+  ];
+  function cancelAdvance(){
+    advanceToken++;
+    if(advanceTimer!==null){clearTimeout(advanceTimer);advanceTimer=null;}
+    if(chosen[0]===answers[0]){
+      document.getElementById('bx-feedback-0').innerHTML='<strong>正确。</strong>全部答案是 14.4 秒和 15.2 秒。';
+    }
+  }
+  function renderQuestion(q){
+    root.querySelectorAll('[data-bx-question="'+q+'"]').forEach(button=>{
+      const selected=Number(button.dataset.bxOption)===chosen[q];
+      const correct=selected&&chosen[q]===answers[q];
+      button.setAttribute('aria-pressed',String(selected));
+      button.classList.toggle('bx-correct',correct);
+      button.classList.toggle('bx-wrong',selected&&!correct);
+      button.querySelector('.bx-mark').textContent=selected?(correct?'✓':'×'):'';
+    });
+    const box=document.getElementById('bx-feedback-'+q);
+    box.hidden=chosen[q]===null;
+    box.classList.toggle('bx-correct',chosen[q]===answers[q]);
+    box.innerHTML=chosen[q]===null?'':feedback[q][chosen[q]];
+  }
+  function choose(q,option){
+    cancelAdvance();
+    chosen[q]=option;
+    renderQuestion(q);
+    if(q!==0||option!==answers[0])return;
+    const token=advanceToken;
+    advanceTimer=setTimeout(()=>{
+      advanceTimer=null;
+      if(token!==advanceToken||chosen[0]!==answers[0]||document.hidden)return;
+      const box=document.getElementById('bx-feedback-0');
+      box.innerHTML='<strong>正确。</strong>全部答案是 14.4 秒和 15.2 秒。';
+      const card=document.getElementById('practice-2');
+      card.scrollIntoView({behavior:reduceMotion()?'auto':'smooth',block:'start'});
+      document.getElementById('bx-p2-title').focus({preventScroll:true});
+    },600);
+  }
+  root.addEventListener('click',event=>{
+    handledClicks.add(event);
+    const button=event.target.closest('[data-bx-question][data-bx-option]');
+    if(button&&root.contains(button)){
+      const q=Number(button.dataset.bxQuestion),option=Number(button.dataset.bxOption);
+      if((q===0||q===1)&&Number.isInteger(option)&&option>=0&&option<4)choose(q,option);
+    }else if(event.target.closest('button,summary,a'))cancelAdvance();
+  });
+  document.addEventListener('click',event=>{
+    if(handledClicks.has(event))return;
+    if(event.target.closest('button,summary,a'))cancelAdvance();
+  });
+  document.addEventListener('visibilitychange',()=>{if(document.hidden)cancelAdvance();});
+  function reset(){
+    cancelAdvance();chosen[0]=chosen[1]=null;
+    renderQuestion(0);renderQuestion(1);
+    root.querySelectorAll('details').forEach(detail=>{detail.open=false;});
+  }
+  window.BounceExtras={reset,cancelAdvance};
+  reset();
+})();
+
+</script>
+<script data-offline>
+(function(){
+'use strict';
+document.getElementById('download-html').addEventListener('click',()=>{
+ try{
+  const copy=document.documentElement.cloneNode(true);
+  copy.querySelectorAll('script:not([data-offline])').forEach(n=>n.remove());
+  copy.querySelectorAll('base').forEach(n=>n.remove());
+  const stage=copy.querySelector('#lesson-stage');if(stage)stage.innerHTML='';
+  const nav=copy.querySelector('#step-nav');if(nav)nav.innerHTML='';
+  const status=copy.querySelector('#download-status');if(status)status.textContent='';
+  const blob=new Blob(['<!doctype html>\n'+copy.outerHTML],{type:'text/html;charset=utf-8'});
+  const url=URL.createObjectURL(blob),a=document.createElement('a');
+  a.href=url;a.download='bouncing-segment-lesson.html';document.body.appendChild(a);a.click();a.remove();
+  setTimeout(()=>URL.revokeObjectURL(url),1500);
+  document.getElementById('download-status').textContent='已生成HTML文件。下载后可离线打开，重新从第1步开始。';
+ }catch(e){document.getElementById('download-status').textContent='未能自动下载，请使用对话中的HTML下载链接。';}
+});
+})();
+
+</script>
+</body></html>

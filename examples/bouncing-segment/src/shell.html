@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="用数轴动画讲清延迟出发、线段折返、相遇前后相距1；选择题答对自动继续，附一图总结与两道变式。"><title>动点与折返线段｜数轴动画互动课</title><style>{{STYLES}}</style></head><body>
+<main class="app" id="lesson-app">
+<header class="mast"><div><div class="brand">数学 · 看懂每一步</div><h1>一边前进，一边折返</h1><p class="intro">沿着时间线，找出两点相距1的全部时刻。</p></div><div class="mast-right"><span class="badge">数轴动点 · 动画互动课</span><button type="button" class="download-btn" id="download-html"><svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M12 3v12m-4-4 4 4 4-4M4 15v5h16v-5"/></svg>下载 HTML</button></div></header>
+<p id="download-status" class="download-status" role="status"></p>
+<details class="problem" id="original-problem"><summary>查看原题与运动规则</summary>
+<p>数轴上A、B、C分别表示有理数a、b、c，满足 <strong>|a＋30|＋|b＋10|＋|c−14|＝0</strong>。</p>
+<p>P从A出发，以2单位/秒一直向右。P运动5秒后，长为6的线段MN开始运动，初始M与B重合，N在M右边。MN以3单位/秒向右；N到C后立即向左折返，M回到B后再次向右，如此往返。Q是MN的中点，t从P出发时开始计。</p>
+<div class="givens"><span>P：向右2单位/秒</span><span>MN：晚出发5秒</span><span>MN＝6，速度3单位/秒</span><span>右端碰C，左端回B</span></div>
+<ol><li>求a、b、c。</li><li>P与C重合时，求t和N表示的数。</li><li>P与Q相距1时，求t的所有值。</li></ol>
+</details>
+<nav class="nav" id="step-nav" aria-label="讲解步骤"></nav>
+<section class="lesson" id="lesson-stage" aria-labelledby="stage-title"></section>
+<p class="footnote">选对后自动进入下一步；选错可按提示重选。动画可暂停，也可点选关键时刻。</p>
+{{EXTRAS}}<p class="doc-bottom">时间单位：秒 · 距离与坐标均使用题目中的单位长度</p>
+</main>
+{{SCRIPTS}}
+</body></html>

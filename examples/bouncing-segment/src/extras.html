@@ -1,0 +1,65 @@
+<section class="bx-section" id="thinking" aria-labelledby="bx-thinking-title">
+  <div class="bx-section-head"><span class="bx-kicker">这道题的数学思维</span><h2 id="bx-thinking-title">一图记住：先定时刻，再看距离</h2></div>
+  <div class="bx-map" role="group" aria-label="四个解题关系：非负性、折返时刻、相遇前后、检查全部时段">
+    <section class="bx-map-cell"><h3><span>01</span> 三个非负数，加起来是 0</h3>
+      <div class="bx-zero"><span>|a＋30|</span><b>＋</b><span>|b＋10|</span><b>＋</b><span>|c−14|</span><b>＝0</b></div>
+      <div class="bx-zero bx-zero-result"><span>＝0</span><b></b><span>＝0</span><b></b><span>＝0</span><b></b></div>
+      <div class="bx-coordinate-strip"><span>A <strong>−30</strong></span><span>B <strong>−10</strong></span><span>C <strong>14</strong></span></div>
+      <p class="bx-map-caption">每一项都不能小于 0，只能各自等于 0。</p>
+    </section>
+    <section class="bx-map-cell"><h3><span>02</span> 每次折返，都把时间分一段</h3>
+      <p class="bx-small-equation">单程移动距离：24 − 6 ＝ 18</p>
+      <p class="bx-small-equation">单程时间：18 ÷ 3 ＝ <strong>6 秒</strong></p>
+      <div class="bx-time-map" role="img" aria-label="P开始运动后第5秒线段开始运动，第11秒右端折返，第17秒左端折返，第23秒右端折返，各段6秒">
+        <div class="bx-time-stops"><span><b>5</b><small>出发</small></span><span><b>11</b><small>折返</small></span><span><b>17</b><small>折返</small></span><span><b>23</b><small>折返</small></span></div>
+        <div class="bx-time-legs"><span>6 秒 →</span><span>← 6 秒</span><span>6 秒 →</span></div>
+      </div>
+      <p class="bx-map-caption">时刻都从 P 出发开始算，别漏掉前 5 秒。</p>
+    </section>
+    <section class="bx-map-cell bx-meeting-cell"><h3><span>03</span> 相距 1：相遇前一次，相遇后一次</h3>
+      <svg class="bx-gap-figure" viewBox="0 0 420 112" role="img" aria-label="第11秒P在负8，Q在11，相距19。P向右速度2，Q向左速度3，每秒距离缩短5。"><defs><marker id="bx-a1" markerWidth="7" markerHeight="7" refX="5" refY="3.5" orient="auto"><path d="M0 0L7 3.5L0 7" fill="#b65e23"/></marker><marker id="bx-a2" markerWidth="7" markerHeight="7" refX="5" refY="3.5" orient="auto"><path d="M0 0L7 3.5L0 7" fill="#147e75"/></marker></defs><text x="210" y="17" text-anchor="middle" class="bx-svg-meta">t ＝ 11 秒</text><line x1="55" y1="62" x2="365" y2="62" stroke="#aebbc7" stroke-width="2"/><circle cx="55" cy="62" r="7" fill="#b65e23"/><circle cx="365" cy="62" r="7" fill="#147e75"/><path d="M72 42H132" stroke="#b65e23" stroke-width="2.5" marker-end="url(#bx-a1)"/><path d="M348 42H288" stroke="#147e75" stroke-width="2.5" marker-end="url(#bx-a2)"/><text x="101" y="31" text-anchor="middle" class="bx-svg-text">2</text><text x="319" y="31" text-anchor="middle" class="bx-svg-text">3</text><text x="210" y="55" text-anchor="middle" class="bx-svg-strong">距离 19</text><text x="55" y="89" text-anchor="middle" class="bx-svg-text">P：−8</text><text x="365" y="89" text-anchor="middle" class="bx-svg-text">Q：11</text><text x="210" y="109" text-anchor="middle" class="bx-svg-meta">相向靠近：每秒缩短 2 ＋ 3 ＝ 5</text></svg>
+      <div class="bx-meeting-times"><div><small>相遇前，相距 1</small><strong>14.6 秒</strong><span>11 ＋ (19 − 1) ÷ 5</span></div><div class="bx-meeting-middle"><small>相遇</small><strong>14.8 秒</strong><span>距离 0</span></div><div><small>相遇后，相距 1</small><strong>15 秒</strong><span>11 ＋ (19 ＋ 1) ÷ 5</span></div></div>
+    </section>
+    <section class="bx-map-cell"><h3><span>04</span> 检查别的时段，防止漏解</h3>
+      <div class="bx-intervals"><div><span>0～11 秒</span><i class="bx-gap-line bx-gap-wide"></i><b>距离 ≥ 13</b></div><div class="bx-interval-hit"><span>11～17 秒</span><i class="bx-gap-line bx-gap-cross"></i><b>找到两次</b></div><div><span>17～23 秒</span><i class="bx-gap-line bx-gap-close"></i><b>11 → 5</b></div><div><span>23 秒以后</span><i class="bx-gap-line bx-gap-wide"></i><b>距离 ≥ 5</b></div></div>
+      <div class="bx-range-check"><span>Q 最右只能到 <b>11</b></span><span>t＝23 时，P 已到 <b>16</b></span></div>
+      <p class="bx-map-caption">P 继续向右，之后不可能再相距 1。</p>
+    </section>
+  </div>
+</section>
+
+<section class="bx-section" id="practice" aria-labelledby="bx-practice-title">
+  <div class="bx-section-head"><span class="bx-kicker">换个条件，再试一次</span><h2 id="bx-practice-title">两道变化训练</h2><p>点选答案，答对后自动继续。</p></div>
+  <article class="bx-practice-card" id="practice-1" aria-labelledby="bx-p1-title">
+    <span class="bx-kicker">训练一 · 距离从 1 改成 2</span><h3 id="bx-p1-title" tabindex="-1">P、Q 相距 2 个单位，发生在什么时候？</h3>
+    <p class="bx-problem">沿用原题的出发位置、速度和折返规则，只把“相距 1”改为<strong>“相距 2”</strong>。求所有符合条件的时刻 t。</p>
+    <div class="bx-givens"><span>t＝11 时，两点相距 19</span><span>P 向右 2，Q 向左 3</span></div>
+    <div class="bx-choices" role="group" aria-label="训练一：选择P和Q相距2的全部时刻">
+      <button class="bx-choice" type="button" data-bx-question="0" data-bx-option="0" aria-pressed="false"><span class="bx-letter">A</span><span>只有 14.4 秒</span><span class="bx-mark" aria-hidden="true"></span></button>
+      <button class="bx-choice" type="button" data-bx-question="0" data-bx-option="1" aria-pressed="false"><span class="bx-letter">B</span><span>14.4 秒、15.2 秒</span><span class="bx-mark" aria-hidden="true"></span></button>
+      <button class="bx-choice" type="button" data-bx-question="0" data-bx-option="2" aria-pressed="false"><span class="bx-letter">C</span><span>3.4 秒、4.2 秒</span><span class="bx-mark" aria-hidden="true"></span></button>
+      <button class="bx-choice" type="button" data-bx-question="0" data-bx-option="3" aria-pressed="false"><span class="bx-letter">D</span><span>只有 14.8 秒</span><span class="bx-mark" aria-hidden="true"></span></button>
+    </div>
+    <div class="bx-feedback" id="bx-feedback-0" role="status" aria-live="polite" hidden></div>
+    <div class="bx-tools"><details><summary>看一点提示</summary><p>相遇前，先把 19 的间距缩到 2；相遇后，再从 0 分开到 2。两种情况都要算。</p></details><details class="bx-solution"><summary>查看图解与答案</summary>
+      <div class="bx-distance-plan"><div><span>相遇前</span><b>19 → 2</b><small>间距缩短 17</small><strong>11 ＋ 17 ÷ 5 ＝ 14.4</strong></div><div><span>相遇后</span><b>19 → 0 → 2</b><small>两点合计移动 21</small><strong>11 ＋ 21 ÷ 5 ＝ 15.2</strong></div></div>
+      <p>其他时段的距离至少为 5 或 13，不会等于 2。因此全部答案是 <strong>14.4 秒和 15.2 秒</strong>，即 72/5 秒和 76/5 秒。</p>
+    </details></div>
+  </article>
+  <article class="bx-practice-card" id="practice-2" aria-labelledby="bx-p2-title">
+    <span class="bx-kicker">训练二 · 换一个观察时刻</span><h3 id="bx-p2-title" tabindex="-1">t＝20 秒时，右端点 N 在哪里？</h3>
+    <p class="bx-problem">原题所有条件不变。注意 t 仍从 <strong>P 出发时</strong>开始计时；这次问的是<strong>右端点 N</strong>表示的数。</p>
+    <div class="bx-givens"><span>t＝17 时，M 回到 −10</span><span>MN 长 6，随后向右走</span></div>
+    <div class="bx-choices" role="group" aria-label="训练二：选择第20秒右端点N的坐标">
+      <button class="bx-choice" type="button" data-bx-question="1" data-bx-option="0" aria-pressed="false"><span class="bx-letter">A</span><span>−1</span><span class="bx-mark" aria-hidden="true"></span></button>
+      <button class="bx-choice" type="button" data-bx-question="1" data-bx-option="1" aria-pressed="false"><span class="bx-letter">B</span><span>2</span><span class="bx-mark" aria-hidden="true"></span></button>
+      <button class="bx-choice" type="button" data-bx-question="1" data-bx-option="2" aria-pressed="false"><span class="bx-letter">C</span><span>5</span><span class="bx-mark" aria-hidden="true"></span></button>
+      <button class="bx-choice" type="button" data-bx-question="1" data-bx-option="3" aria-pressed="false"><span class="bx-letter">D</span><span>14</span><span class="bx-mark" aria-hidden="true"></span></button>
+    </div>
+    <div class="bx-feedback" id="bx-feedback-1" role="status" aria-live="polite" hidden></div>
+    <div class="bx-tools"><details><summary>看一点提示</summary><p>从第 17 秒到第 20 秒，只走了 3 秒。此段开始时 N 在 −4，向右走时坐标增加。</p></details><details class="bx-solution"><summary>查看图解与答案</summary>
+      <div class="bx-endpoint-figure"><div class="bx-endpoint-equation">N：−4 ＋ 3 × (20 − 17) ＝ <strong>5</strong></div><svg viewBox="0 0 480 120" role="img" aria-label="第20秒，线段左端M在负1，中点Q在2，右端N在5；M到Q、Q到N各3个单位。"><line x1="35" y1="67" x2="445" y2="67" stroke="#b7c4cd" stroke-width="2"/><line x1="90" y1="67" x2="390" y2="67" stroke="#147e75" stroke-width="7" stroke-linecap="round"/><circle cx="90" cy="67" r="7" fill="#147e75"/><circle cx="240" cy="67" r="7" fill="#fff" stroke="#147e75" stroke-width="3"/><circle cx="390" cy="67" r="8" fill="#147e75"/><text x="90" y="42" text-anchor="middle" class="bx-svg-text">M</text><text x="240" y="42" text-anchor="middle" class="bx-svg-text">Q</text><text x="390" y="42" text-anchor="middle" class="bx-svg-strong">N</text><text x="90" y="96" text-anchor="middle" class="bx-svg-text">−1</text><text x="240" y="96" text-anchor="middle" class="bx-svg-text">2</text><text x="390" y="96" text-anchor="middle" class="bx-svg-strong">5</text><text x="165" y="59" text-anchor="middle" class="bx-svg-meta">3</text><text x="315" y="59" text-anchor="middle" class="bx-svg-meta">3</text></svg></div>
+      <p>M、Q、N 是三个不同的点，先认准题目问谁，再读坐标。</p>
+    </details></div>
+  </article>
+</section>

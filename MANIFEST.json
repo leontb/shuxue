@@ -1,0 +1,201 @@
+{
+  "name": "math-courseware-kit",
+  "version": "0.2",
+  "created_on": "2026-11-01",
+  "description": "数学动画互动课件的Agent实施说明、可移植Skill、源码模板、完整案例与验收记录",
+  "hash_algorithm": "SHA-256",
+  "manifest_self_hash_excluded": true,
+  "files": [
+    {
+      "path": ".gitignore",
+      "bytes": 93,
+      "sha256": "fed6f7fc106566aae1c7120bef4165d7b5fc39c12ff7534368dcce8831fa1343"
+    },
+    {
+      "path": "AGENT_GUIDE.md",
+      "bytes": 14086,
+      "sha256": "5fca6ff7da1b4e4da8db3d97944762834ba5cbe18e55ac6c3be9f35abc0301b1"
+    },
+    {
+      "path": "COPY_PROMPT.md",
+      "bytes": 3622,
+      "sha256": "180354aa60fb5469282ea7f16fa8b5022a145048e09f9a228577d35d808614cc"
+    },
+    {
+      "path": "LICENSE",
+      "bytes": 1063,
+      "sha256": "2ff7c25b69b37aed69f7cd3e0efb2aebcec2fd8c85822c30fb1e0691b245c397"
+    },
+    {
+      "path": "README.md",
+      "bytes": 6730,
+      "sha256": "4caa21791632da51b612a04510d61c4f7c66ebcdf4549b48de5ac9c8c6539d75"
+    },
+    {
+      "path": "VALIDATION.md",
+      "bytes": 5237,
+      "sha256": "d69c8ed77a0a31b51e644101dbc5d1bbbd259fcfbe2bb688bf8cb8e9baac0422"
+    },
+    {
+      "path": "examples/bouncing-segment/index.html",
+      "bytes": 62615,
+      "sha256": "8558839327f9b25485ad49b273dc35da32849b642d8a0ea06e7be012a5a22cc8"
+    },
+    {
+      "path": "examples/bouncing-segment/src/build.py",
+      "bytes": 596,
+      "sha256": "f3caad38148abcd070632e007f0b718d26fb44ac23a1a277380df87d8b99151c"
+    },
+    {
+      "path": "examples/bouncing-segment/src/check_math.js",
+      "bytes": 5507,
+      "sha256": "100f3c99f21e034dd71e816c98b0957689e94a16f39bb8c5d8c143f30610010a"
+    },
+    {
+      "path": "examples/bouncing-segment/src/download.js",
+      "bytes": 1124,
+      "sha256": "95444f02c7d707ba01dd66812cacdc49e8aff5f8346ca693989ec02c4eb8f065"
+    },
+    {
+      "path": "examples/bouncing-segment/src/extras.css",
+      "bytes": 8337,
+      "sha256": "ba9f08626c54272e9f5b4bd64b3d6714cdf07a973b6ebd48f39913be07a158f5"
+    },
+    {
+      "path": "examples/bouncing-segment/src/extras.html",
+      "bytes": 10301,
+      "sha256": "e277369cdc17b032e46e750b05910fe9fe0f21da549073d14ab02b72da20f33f"
+    },
+    {
+      "path": "examples/bouncing-segment/src/extras.js",
+      "bytes": 3864,
+      "sha256": "873f373e3389301e44ac366884821e98869d6759db157d9f7569f7152b8bb7a9"
+    },
+    {
+      "path": "examples/bouncing-segment/src/main.js",
+      "bytes": 22245,
+      "sha256": "28aa20a934c11c509ef8288156cd8f2bd0b7bf7c6f8066e62e65bda01584f7ed"
+    },
+    {
+      "path": "examples/bouncing-segment/src/math.js",
+      "bytes": 376,
+      "sha256": "484a0a0ee27423160c2eae051f318cdd2005ed99f76536fce62758d668397023"
+    },
+    {
+      "path": "examples/bouncing-segment/src/shell.html",
+      "bytes": 2263,
+      "sha256": "d8361c0bfcc91ae097fc821635961f6d75f0d110d661a24d6847d774c2e66c42"
+    },
+    {
+      "path": "examples/bouncing-segment/src/style.css",
+      "bytes": 14004,
+      "sha256": "b79746f2c0357fd97659811fa7531e1a5f18b7fee2d2c5dd1687f8ff75ee17c8"
+    },
+    {
+      "path": "examples/water-storyboard.md",
+      "bytes": 16770,
+      "sha256": "b547f0d91f2abc5b9986e7c71698a368453cf7d5fb42951fdc4db6c5253c8603"
+    },
+    {
+      "path": "skills/create-math-lesson/SKILL.md",
+      "bytes": 6830,
+      "sha256": "1d3d487ff63da99d23ae742fa068ca4b7a5868f0647bcb9eb88ef1fdef8729b2"
+    },
+    {
+      "path": "skills/create-math-lesson/agents/openai.yaml",
+      "bytes": 330,
+      "sha256": "3e4fd32d57a6abd4950b085e7ed7ca005c5be47e99503c9ce344ed208ea156bb"
+    },
+    {
+      "path": "skills/create-math-lesson/assets/bouncing-reference.html",
+      "bytes": 62615,
+      "sha256": "8558839327f9b25485ad49b273dc35da32849b642d8a0ea06e7be012a5a22cc8"
+    },
+    {
+      "path": "skills/create-math-lesson/assets/starter/build.py",
+      "bytes": 1981,
+      "sha256": "966a28cf5c192fbef8ea29286e287f1d58b5f684b49cc4f7ffb6996a37ba0788"
+    },
+    {
+      "path": "skills/create-math-lesson/assets/starter/controller.js",
+      "bytes": 3758,
+      "sha256": "26c948c4601a55950bc5c0706b59ad7216f1099eb7900fa9be2ea0708fb80680"
+    },
+    {
+      "path": "skills/create-math-lesson/assets/starter/download.js",
+      "bytes": 2102,
+      "sha256": "cea40d5244b6ad0885fe258cc40806d68927324c5be561db4134a3f67c9523e8"
+    },
+    {
+      "path": "skills/create-math-lesson/assets/starter/engine.js",
+      "bytes": 10323,
+      "sha256": "6f21815ecc15ca6aa5ac8d725b35c37589a2f81621ba50b617e55f8300f02371"
+    },
+    {
+      "path": "skills/create-math-lesson/assets/starter/index.html",
+      "bytes": 36002,
+      "sha256": "ab016b7f5e1b23dfa9511f0f08c4e45d8aa0b0669560efb9328cd7df58301918"
+    },
+    {
+      "path": "skills/create-math-lesson/assets/starter/lesson.js",
+      "bytes": 9563,
+      "sha256": "4cacf9e54a9449ef750ec057850eb2fbad210767343a4bdbbecd317215d3af9d"
+    },
+    {
+      "path": "skills/create-math-lesson/assets/starter/shell.html",
+      "bytes": 1538,
+      "sha256": "cb309025e3634939530b293a5bf49f5c3b3578397c0be9a761271a29176dd136"
+    },
+    {
+      "path": "skills/create-math-lesson/assets/starter/style.css",
+      "bytes": 8569,
+      "sha256": "36ab28b764daaa37eafca025d7921ff70353fc3fbfb046ecbd59bffa7f9307f0"
+    },
+    {
+      "path": "skills/create-math-lesson/references/interaction-contract.md",
+      "bytes": 5907,
+      "sha256": "fe09a00cbcad12fb0fb8d3f1afb8610589896e4a08f8452cfa29f1106ba6ea66"
+    },
+    {
+      "path": "skills/create-math-lesson/references/storyboard-template.md",
+      "bytes": 1409,
+      "sha256": "fb86e719e7afc43c30b5151f77125a3f2dcab48d77fc1af03ddf440457c786fe"
+    },
+    {
+      "path": "skills/create-math-lesson/references/teaching-method.md",
+      "bytes": 4763,
+      "sha256": "282ce4a97e539302113e6b396d08e58e366202ddad01cd8259f0f2e8713741cb"
+    },
+    {
+      "path": "skills/create-math-lesson/references/template-api.md",
+      "bytes": 2678,
+      "sha256": "aaaaa222e21935cc2b2e3028080d1275d03c8a0ff4bd1b99fb8156af41469be9"
+    },
+    {
+      "path": "skills/create-math-lesson/references/verification.md",
+      "bytes": 3476,
+      "sha256": "a1a3b382cf8512eb9945fd2ccd5472908177f13d25f353349f99d090eba280f7"
+    },
+    {
+      "path": "skills/create-math-lesson/references/worked-patterns.md",
+      "bytes": 3331,
+      "sha256": "377d90b69515881aefe40e4bb2e9962b3820fa160c897cd654244fee22cc1e89"
+    },
+    {
+      "path": "skills/create-math-lesson/scripts/check_delivery.py",
+      "bytes": 5700,
+      "sha256": "bcb54df4481ea5e619be109de20f9590ac6078fe2fd3599ac8cfd020e8ec9640"
+    },
+    {
+      "path": "skills/create-math-lesson/scripts/check_engine.cjs",
+      "bytes": 6867,
+      "sha256": "c6f87ff64a5feda56f454d92dfbbdafdf24b73429d21cbe6217f7cbc7ba977cd"
+    },
+    {
+      "path": "skills/create-math-lesson/scripts/new_lesson.py",
+      "bytes": 1233,
+      "sha256": "b3b33e868ead0a3b1c1b08dd923cd2a0dc96e8844ee119f421fc70476e6c6c3a"
+    }
+  ],
+  "license": "MIT"
+}

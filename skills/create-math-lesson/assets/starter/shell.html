@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>数学动画互动课</title>
+  <style data-offline="style">{{CSS}}</style>
+</head>
+<body>
+<main class="app" id="courseware-app">
+  <header class="mast">
+    <div><p class="eyebrow">数学 · 看懂每一步</p><h1 id="lesson-title"></h1><p id="lesson-subtitle" class="subheading"></p></div>
+    <button type="button" class="button download" id="download-html">下载 HTML</button>
+  </header>
+  <p id="download-status" class="download-status" role="status"></p>
+  <details class="problem"><summary>查看原题</summary><div id="problem-content"></div></details>
+  <nav id="lesson-nav" class="step-nav" aria-label="讲解步骤"></nav>
+  <section id="lesson-stage" class="lesson" aria-labelledby="stage-title"></section>
+  <p class="footnote">选对后自动继续；选错可按提示重选。可暂停、重播，也可返回查看。</p>
+  <section class="extension" aria-labelledby="summary-title"><p class="eyebrow">这道题的数学思维</p><h2 id="summary-title">一图看清：每次以谁为标准？</h2><div id="summary-content"></div></section>
+  <section class="extension" id="practice" aria-labelledby="practice-title"><p class="eyebrow">换个问法，再试一次</p><h2 id="practice-title">两道变化训练</h2><div id="practice-list"></div></section>
+  <noscript>请在支持 JavaScript 的浏览器中打开本课件。</noscript>
+</main>
+{{SCRIPTS}}
+</body>
+</html>

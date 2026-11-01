@@ -1,0 +1,4 @@
+interface:
+  display_name: "数学动画互动课件"
+  short_description: "把数学题拆成原理图示、自动推进选择题和变式训练，输出离线课件"
+  default_prompt: "使用 $create-math-lesson，把这道题制作成六年级能直接看懂的动画互动课件，输出可下载HTML和两道变化训练。"
